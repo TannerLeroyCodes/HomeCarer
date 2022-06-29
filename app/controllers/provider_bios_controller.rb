@@ -1,0 +1,2 @@
+class ProviderBiosController < ApplicationController
+end

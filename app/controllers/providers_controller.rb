@@ -1,9 +1,7 @@
 class ProvidersController < ApplicationController
 
-
-
     def show 
-        render json: @current_provider
+        render json: current_provider
     end 
     
     def create 
@@ -12,7 +10,6 @@ class ProvidersController < ApplicationController
         render json: provider, status: :created
     end 
     
-  
     
 private
     

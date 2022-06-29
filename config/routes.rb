@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :providers
+  resources :appointments
+  resources :provider_bios
   resources :user_bios
-  resources :users
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -10,12 +11,12 @@ Rails.application.routes.draw do
 
 
   post '/signup', to: "users#create"
-  get '/me', to: "users#show"
+  get '/current-user', to: "users#show"
   post "/login", to: "sessions#login"
   delete "/logout", to: "sessions#logout"
 
-  post '/signup', to: "providers#create"
-  get '/me', to: "providers#show"
+  post '/signup-provider', to: "providers#create"
+  get '/current-provider', to: "providers#show"
   post "/login-provider", to: "sessions#login_prov"
   delete "/logout-provider", to: "sessions#logout_prov"
 

@@ -1,2 +1,3 @@
 class UserBiosController < ApplicationController
+    
 end
