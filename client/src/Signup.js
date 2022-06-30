@@ -11,6 +11,7 @@ function Signup() {
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [fetchEndPoint, setFetchEndPoint] = useState("")
 
     const [errors, setErrors] = useState([])
 
@@ -27,7 +28,7 @@ function Signup() {
             email: email,
             password: password
         }
-     fetch('/signup', {
+     fetch(`${fetchEndPoint}`, {
         method: 'POST', 
         headers: {'Content-Type': 'application/json'},
         body:JSON.stringify(user),
@@ -52,10 +53,10 @@ function Signup() {
   
     
     <form onSubmit={onSubmit}>
-    <select>
+    <select onChange={(e)=> setFetchEndPoint(e.target.value)}>
         <option>-</option>
-        <option value={"/login"}>As a HomeCarer user</option>
-        <option value={"/login-provider"}>As a HomeCarer provider</option>
+        <option value={"/signup"} >As a HomeCarer user</option>
+        <option value={"/signup-provider"} >As a HomeCarer provider</option>
     </select>
     <label> First Name</label>
     <input type="text" placeholder="First Name" value={firstName} onChange={(e) => {setFirstName(e.target.value)}}></input>

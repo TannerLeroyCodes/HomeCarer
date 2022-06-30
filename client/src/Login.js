@@ -18,6 +18,7 @@ const history = useNavigate();
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
 const [error, setError] = useState([])
+const [fetchEndPoint, setFetchEndPoint] = useState("")
 
 
 function handleLogin(e){
@@ -27,7 +28,7 @@ function handleLogin(e){
         email: email,
         password: password
     }
-fetch("/login",  {
+fetch(`${fetchEndPoint}`,  {
     method: "POST",
     headers: {'Content-Type': 'application/json'},
     body:JSON.stringify(user)
@@ -50,11 +51,11 @@ fetch("/login",  {
 
   return (
     <div>
-        <h2>A convenient stop for all your shopping needs</h2>
+        <h2>HomeCarer</h2>
         <h1>Log-in</h1>
         
         <form onSubmit={handleLogin}>
-        <select>
+        <select onChange={(e)=> setFetchEndPoint(e.target.value)}>
         <option>-</option>
         <option value={"/login"}>As a HomeCarer user</option>
         <option value={"/login-provider"}>As a HomeCarer provider</option>
