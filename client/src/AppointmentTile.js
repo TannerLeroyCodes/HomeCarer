@@ -2,7 +2,6 @@ import React from 'react'
 import dateFormat from 'dateformat'
 
 function AppointmentTile({appointment}) {
-    console.log(appointment)
 
    const dateFormatted =  dateFormat(`${appointment.date}`, "mmmm dS, yyyy")
 

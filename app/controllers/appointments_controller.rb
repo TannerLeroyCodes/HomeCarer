@@ -1,4 +1,5 @@
 class AppointmentsController < ApplicationController
+    before_action :is_authorized?
 
     def index
         render json: Appointment.all, status: :ok
