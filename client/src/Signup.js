@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
-// import {useDispatch} from "react-redux";
-// import {login} from './features/user'
+import {useDispatch} from "react-redux";
+import {login} from './features/user'
+import {useNavigate} from 'react-router-dom';
 
 
 
@@ -13,7 +14,8 @@ function Signup() {
 
     const [errors, setErrors] = useState([])
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
+    const history = useNavigate()
 
 
 
@@ -34,8 +36,8 @@ function Signup() {
         if (res.ok) {
             res.json()
             .then(user=>{
-                // dispatch(login(user))
-                // dispatch(authenticate(true))
+                dispatch(login(user))
+                history("/login")
             })
      } else {
         res.json()
@@ -47,12 +49,14 @@ function Signup() {
   return (
     <>
     <h1>Sign-up</h1>
-    <select>
-        <option>As a HomeCarer user</option>
-        <option>As a HomeCarer provider</option>
-    </select>
+  
     
     <form onSubmit={onSubmit}>
+    <select>
+        <option>-</option>
+        <option value={"/login"}>As a HomeCarer user</option>
+        <option value={"/login-provider"}>As a HomeCarer provider</option>
+    </select>
     <label> First Name</label>
     <input type="text" placeholder="First Name" value={firstName} onChange={(e) => {setFirstName(e.target.value)}}></input>
     <label> Last Name</label>

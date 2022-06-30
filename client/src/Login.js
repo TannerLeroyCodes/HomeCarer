@@ -1,19 +1,19 @@
 import React, {useState} from 'react';
-// import {useDispatch} from "react-redux";
-// import {login} from './features/user'
+import {useDispatch} from "react-redux";
+import {login} from './features/user'
 
 
-// import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 // import {useSelector} from 'react-redux';
 
 
 function Login({}) {
 
-// const dispatch = useDispatch();
+const dispatch = useDispatch();
 // const user1 = useSelector((state) => state.user.value)
 
 
-// const history = useNavigate();
+const history = useNavigate();
 
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
@@ -36,17 +36,14 @@ fetch("/login",  {
    if (res.ok){
         res.json()
         .then(user =>{
-            // dispatch(login(user))
+            dispatch(login(user))
         })
-        // .then(history("/orders"))
+        .then(history("/home"))
         
-
     } else {
         res.json()
         .then((json) => setError(json.errors))
     }
-
-
 })
 
 }
@@ -57,6 +54,11 @@ fetch("/login",  {
         <h1>Log-in</h1>
         
         <form onSubmit={handleLogin}>
+        <select>
+        <option>-</option>
+        <option value={"/login"}>As a HomeCarer user</option>
+        <option value={"/login-provider"}>As a HomeCarer provider</option>
+    </select>
          <label>Email:</label>   
          <input type="text" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}></input>
          <label>Password:</label>

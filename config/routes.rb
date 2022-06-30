@@ -3,12 +3,9 @@ Rails.application.routes.draw do
   resources :provider_bios
   resources :user_bios
 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 
 
+  get '/providers', to: "providers#index"
 
   post '/signup', to: "users#create"
   get '/current-user', to: "users#show"
