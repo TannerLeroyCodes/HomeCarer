@@ -1,5 +1,5 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import HomePage from "./HomePage";
+import UserHomePage from "./UserHomePage";
 import LandingPage from "./LandingPage";
 import LoginPage from "./Login";
 
@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route exact path={"/"} element={<LandingPage/>}/>
         <Route exact  path={"/login"} element={<LoginPage/>}/>
-        <Route exact path={"/home"} element={<HomePage/>} />
+        <Route exact path={"/home"} element={<UserHomePage/>} />
       </Routes>
     </Router>
   
