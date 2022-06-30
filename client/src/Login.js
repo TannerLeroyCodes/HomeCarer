@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {useDispatch} from "react-redux";
 import {login} from './features/user'
+import {Link} from 'react-router-dom'
 
 
 import {useNavigate} from 'react-router-dom'
@@ -66,6 +67,9 @@ fetch(`${fetchEndPoint}`,  {
          <input type="text" placeholder='Password' value={[password]} onChange={(e) => setPassword(e.target.value)}></input>
          <button type={"submit"}>Log-in</button>
         </form>
+
+        <div>If you need to create an account, please sign-up using the link below</div>
+    <Link to={'/'}>Click here to sign-up</Link>
 
 {error?<div>{error}</div>:null}
 
