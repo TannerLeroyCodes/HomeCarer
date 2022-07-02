@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-skip_before_action :is_authorized?, only: [:create]
+# skip_before_action :is_authorized?, only: [:create]
 
     def show 
         render json: current_user

@@ -9,9 +9,15 @@ function UserAccountPage() {
     const [description, setDescription] = useState("")
     const [patientAge, setPatientAge] = useState("")
     const [patientDescription, setPatientDescription] = useState("")
+
+
     const [error, setErrors] = useState([])
 
     const user = useSelector((state) => state.user.value)
+
+    const handleUpdate = () =>{
+        fetch()
+    }
   
 
 // useEffect(() => {

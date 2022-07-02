@@ -1,5 +1,5 @@
 class UserBiosController < ApplicationController
-before_action :is_authorized?
+# before_action :is_authorized?
  
 
     def show
