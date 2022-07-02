@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :appointments
   resources :provider_bios
-  resources :user_bios
+  resources :user_bios, only: [:show, :create, :update]
 
 
 

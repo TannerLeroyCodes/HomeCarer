@@ -3,6 +3,7 @@ import UserNavBar from './UserNavBar'
 import {useSelector} from 'react-redux';
 import {Link} from 'react-router-dom'
 
+
 function UserAccountPage() {
 
     const [location, setLocation] = useState("")
@@ -15,17 +16,41 @@ function UserAccountPage() {
 
     const user = useSelector((state) => state.user.value)
 
-    const handleUpdate = () =>{
-        fetch()
+    const handleUpdate = (e) =>{
+        e.preventDefault();
+        console.log(user)
+
+        const updatedBio = {
+            location: location,
+            description: description,
+            patient_age: patientAge,
+            patient_description: patientDescription
+        }
+
+        fetch(`user_bios/${user.user_bio.id}`, {
+            method: "PATCH",
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(updatedBio)
+        })
+        .then(r => r.json())
+        .then((data)=> console.log(data))
     }
+
+    //     setLocation("")
+    //     setDescription("")
+    //     setPatientAge("")  
+    //     setPatientDescription("")
+    // }
   
 
-// useEffect(() => {
-//     setLocation(user.user_bio.location)
-//     setDescription(user.user_bio.description)
-//     // setPatientAge(user.user_bio.patient_age)
-//     // setPatientDescription(user.user_bio.patient_description)
-// },[])
+const handlePullCurrentBio = (e) => {
+    e.preventDefault();
+
+    setLocation(user.user_bio.location)
+    setDescription(user.user_bio.description)
+    setPatientAge(user.user_bio.patient_age)
+    setPatientDescription(user.user_bio.patient_description)
+}
     
      
 
@@ -39,8 +64,9 @@ function UserAccountPage() {
     <h2>Account Page</h2>
     <h3>Update your account details using the form below</h3>
     
+ <button onClick={handlePullCurrentBio}>Pull Current Bio</button>
 
-    <form>
+    <form onSubmit={handleUpdate}>
       <label>Location: </label>  
       <input className="input" type="text" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)}></input>
       <label>User Bio: </label>  
@@ -49,7 +75,7 @@ function UserAccountPage() {
       <input className="input" type="text" placeholder="Patient Age" value={patientAge} onChange={(e) => setPatientAge(e.target.value)}></input>
       <label>Patient Description: </label>  
       <input className="input-large" type="text" placeholder="Patient Age" value={patientDescription} onChange={(e) => setPatientDescription(e.target.value)}></input>
-
+    <button> Update Bio</button>
 
     </form>
 
