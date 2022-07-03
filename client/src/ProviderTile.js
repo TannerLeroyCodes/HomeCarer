@@ -1,10 +1,11 @@
 import React from 'react'
 
 function ProviderTile({provider}) {
-  return (<>
+  return (
+  <>
   <div>Provider Tile</div>
-    <div>{provider.first_name}</div>
-    </>
+  <div>{provider.first_name}</div>
+   </>
   )
 }
 

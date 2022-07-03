@@ -1,8 +1,14 @@
 #Notes
 
 
-Need to conditionally send a login fetch request depending on selection from tab
+Need to conditionally send a login fetch request depending on selection from tab [x]
 
- Need to conditionally re-route and render homepage for either Users or Providers
+--
+Need to conditionally re-route and render homepage for either Users or Providers
+--
+Fix Users Providers Page rendering
+-- 
+Fix User update page so that after you update the bio information. If you click the "pull info" it reflects updates. 
 
- when i login i need 
+
+

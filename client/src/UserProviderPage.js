@@ -3,8 +3,10 @@ import UserNavBar from './UserNavBar'
 import ProviderTile from './ProviderTile'
 
 function UserProviderPage() {
-let arrayOfProviders = []
+
 const [providers, setProviders] = useState([])
+
+// let arrOfProviders = []
 
 useEffect(( ) => {
     fetch("/providers")
@@ -13,14 +15,17 @@ useEffect(( ) => {
 },[])
 
 
- arrayOfProviders = providers.map(provider => {
-    <ProviderTile provider={provider}/>
-})
+//  arrOfProviders = providers.map(provider => {
+//     <ProviderTile provider={provider}/>
+// })
 
   return (
     <>
     <UserNavBar/>
-    <div>{arrayOfProviders}</div>
+    <div>Provider Page</div>
+    <div>Providers: {providers.map( provider => {
+    <ProviderTile provider={provider}/>
+})}</div>
     </>
   )
 }
