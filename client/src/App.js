@@ -6,6 +6,8 @@ import UserProviderPage from "./UserProviderPage";
 import UserAccountPage from "./UserAccountPage";
 import ProviderHomePage from "./ProviderHomePage";
 import ErrorPage from "./ErrorPage";
+import ProviderAccountPage from "./ProviderAccountPage";
+import ProviderAppointmentsPage from "./ProviderAppointments";
 
 function App() {
 
@@ -19,6 +21,8 @@ function App() {
         <Route exact path={"/providers"} element={<UserProviderPage/>} />
         <Route exact path={"/account"} element={<UserAccountPage/>} />
         <Route exact path={"/provider-home"} element={<ProviderHomePage/>} />
+        <Route exact path={"/provider-appointments"} element={<ProviderAppointmentsPage/>} />
+        <Route exact path={"/provider-account"} element={<ProviderAccountPage/>} /> 
         <Route exact path={"*"} element={<ErrorPage/>}/>
       </Routes>
     </Router>
