@@ -1,10 +1,10 @@
 #Notes
 
+#Bugs/ToDos
 
 Need to conditionally send a login fetch request depending on selection from tab [x]
-
 --
-Need to conditionally re-route and render homepage for either Users or Providers
+Need to conditionally re-route and render homepage for either Users or Providers[x]
 --
 Fix Users Providers Page rendering
 -- 
