@@ -12,6 +12,8 @@ Fix User update page so that after you update the bio information. If you click 
 --
 Add more validations (see providerBio)
 --
+ Make Providers Account Page auto-populate with current information. 
 
+ -- 
 
 

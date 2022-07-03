@@ -15,6 +15,8 @@ function ProviderAccountPage() {
     const [rate, setRate] = useState("")
     const [description, setDescription] = useState("")
 
+    const [error, setErrors] = useState([])
+
 
     const handleUpdate = (e) =>{
         e.preventDefault();
@@ -31,13 +33,23 @@ function ProviderAccountPage() {
             rate: rate
         }
 
-        fetch(`user_bios/${user.user_bio.id}`, {
+        fetch(`provider_bios/${user.provider_bio.id}`, {
             method: "PATCH",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(updatedBio)
         })
         .then(r => r.json())
         .then((data)=> console.log(data))
+    }
+
+    const handlePullCurrentBio = (e) => {
+        e.preventDefault();
+    
+        setLocation(user.provider_bio.location)
+        setDescription(user.provider_bio.description)
+        setCertifiedNurseAide(user.provider_bio.certified_nurse_aide)
+        setRate(user.provider_bio.rate)
+        setYearsInHealthcare(user.provider_bio.years_in_healhcare)
     }
 
 
@@ -47,7 +59,7 @@ function ProviderAccountPage() {
   <h2>Account Page</h2>
     <h3>Update your account details using the form below</h3>
     
- <button >Pull Current Bio</button>
+ <button onClick={handlePullCurrentBio}>Pull Current Bio</button>
 
     <form onSubmit={handleUpdate}>
       <label>Location: </label>  
@@ -64,7 +76,7 @@ function ProviderAccountPage() {
       <input className="checkbox" type="checkbox"  value={nursingCare} onChange={(e) => setNursingCare(e.target.value)}></input>
       <label>Years working in Healthcare: </label>  
       <input className="input" type="text" placeholder="Years in Healthcare" value={yearsInHealthcare} onChange={(e) => setYearsInHealthcare(e.target.value)}></input>
-      <label>Location: </label>  
+      <label>Rate: </label>  
       <input className="input" type="text" placeholder="Rate" value={rate} onChange={(e) => setRate(e.target.value)}></input>
     
     <button> Update Bio</button>
