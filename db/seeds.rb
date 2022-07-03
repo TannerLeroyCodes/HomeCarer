@@ -43,10 +43,10 @@ pb7 = ProviderBio.create(provider_id: p7.id, location: Faker::Address.state, cer
 
 puts "Starting to seed Appointments..."
 
-Appointment.create(user_id: tanner.id, provider_id: p1.id, date:Faker::Date.in_date_period(month: 2), accepted: false, declined: false, type_of_care: "Personal care", notes: "Please heatup dinner and keep on eye on Ed. Feel free to put on any movie he is easy-going")
-Appointment.create(user_id: tanner.id, provider_id: p3.id, date:Faker::Date.in_date_period(month: 2), accepted: false, declined: false, type_of_care: "Personal care", notes: "Please heatup dinner and keep on eye on Ed. Feel free to put on any movie he is easy-going")
-Appointment.create(user_id: tanner.id, provider_id: p4.id, date:Faker::Date.in_date_period(month: 2), accepted: false, declined: false, type_of_care: "Personal care", notes: "Please heatup dinner and keep on eye on Ed. Feel free to put on any movie he is easy-going")
-Appointment.create(user_id: tanner.id, provider_id: p1.id, date:Faker::Date.in_date_period(month: 2), accepted: false, declined: false, type_of_care: "Personal care", notes: "Please heatup dinner and keep on eye on Ed. Feel free to put on any movie he is easy-going")
-Appointment.create(user_id: tanner.id, provider_id: p5.id, date:Faker::Date.in_date_period(month: 2), accepted: false, declined: false, type_of_care: "Personal care", notes: "Please heatup dinner and keep on eye on Ed. Feel free to put on any movie he is easy-going")
+Appointment.create(user_id: tanner.id, provider_id: p1.id, date:Faker::Date.in_date_period(month: 2), accepted: false, declined: false, type_of_care: "Personal care", notes: "Please heatup dinner and keep on eye on Ed. Feel free to put on any movie he is easy-going", length_in_hours: rand(1..6))
+Appointment.create(user_id: tanner.id, provider_id: p3.id, date:Faker::Date.in_date_period(month: 2), accepted: false, declined: false, type_of_care: "Personal care", notes: "Please heatup dinner and keep on eye on Ed. Feel free to put on any movie he is easy-going", length_in_hours: rand(1..6))
+Appointment.create(user_id: tanner.id, provider_id: p4.id, date:Faker::Date.in_date_period(month: 2), accepted: false, declined: false, type_of_care: "Personal care", notes: "Please heatup dinner and keep on eye on Ed. Feel free to put on any movie he is easy-going", length_in_hours: rand(1..6))
+Appointment.create(user_id: tanner.id, provider_id: p1.id, date:Faker::Date.in_date_period(month: 2), accepted: false, declined: false, type_of_care: "Personal care", notes: "Please heatup dinner and keep on eye on Ed. Feel free to put on any movie he is easy-going", length_in_hours: rand(1..6))
+Appointment.create(user_id: tanner.id, provider_id: p5.id, date:Faker::Date.in_date_period(month: 2), accepted: false, declined: false, type_of_care: "Personal care", notes: "Please heatup dinner and keep on eye on Ed. Feel free to put on any movie he is easy-going", length_in_hours: rand(1..6))
 
 puts "Finished seeding!"

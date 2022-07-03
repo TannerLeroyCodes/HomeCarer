@@ -31,7 +31,7 @@ class AppointmentsController < ApplicationController
     private 
 
     def appointment_params
-        params.permit(:user_id, :provider_id, :date, :accepted, :declined, :type_of_care, :notes)
+        params.permit(:user_id, :provider_id, :date, :accepted, :declined, :type_of_care, :notes, :length_in_hours)
     end 
 
 end

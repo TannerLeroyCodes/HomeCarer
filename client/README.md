@@ -9,6 +9,9 @@ Need to conditionally re-route and render homepage for either Users or Providers
 Fix Users Providers Page rendering
 -- 
 Fix User update page so that after you update the bio information. If you click the "pull info" it reflects updates. 
+--
+Add more validations (see providerBio)
+--
 
 
 

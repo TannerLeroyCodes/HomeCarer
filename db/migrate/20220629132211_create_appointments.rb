@@ -7,6 +7,7 @@ class CreateAppointments < ActiveRecord::Migration[7.0]
       t.boolean :accepted
       t.boolean :declined
       t.string :type_of_care
+      t.integer :length_in_hours
       t.string :notes
 
       t.timestamps
