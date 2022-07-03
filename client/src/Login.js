@@ -29,6 +29,16 @@ function handleLogin(e){
         email: email,
         password: password
     }
+
+    const historyEndPoint = () => {
+        if (fetchEndPoint === "/login"){
+           return  "/home"
+        } else {
+            return "/provider-home"
+        }
+    }
+
+
 fetch(`${fetchEndPoint}`,  {
     method: "POST",
     headers: {'Content-Type': 'application/json'},
@@ -40,7 +50,7 @@ fetch(`${fetchEndPoint}`,  {
         .then(user =>{
             dispatch(login(user))
         })
-        .then(history("/home"))
+        .then(history(historyEndPoint()))
         
     } else {
         res.json()

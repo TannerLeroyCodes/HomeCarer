@@ -4,6 +4,8 @@ import LandingPage from "./LandingPage";
 import LoginPage from "./Login";
 import UserProviderPage from "./UserProviderPage";
 import UserAccountPage from "./UserAccountPage";
+import ProviderHomePage from "./ProviderHomePage";
+import ErrorPage from "./ErrorPage";
 
 function App() {
 
@@ -16,6 +18,8 @@ function App() {
         <Route exact path={"/home"} element={<UserHomePage/>} />
         <Route exact path={"/providers"} element={<UserProviderPage/>} />
         <Route exact path={"/account"} element={<UserAccountPage/>} />
+        <Route exact path={"/provider-home"} element={<ProviderHomePage/>} />
+        <Route exact path={"*"} element={<ErrorPage/>}/>
       </Routes>
     </Router>
   
