@@ -49,7 +49,7 @@ function ProviderAccountPage() {
         setDescription(user.provider_bio.description)
         setCertifiedNurseAide(user.provider_bio.certified_nurse_aide)
         setRate(user.provider_bio.rate)
-        setYearsInHealthcare(user.provider_bio.years_in_healhcare)
+        setYearsInHealthcare(user.provider_bio.year_in_healthcare)
     }
 
 
