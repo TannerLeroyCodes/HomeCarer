@@ -5,7 +5,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
 
-# before_action :is_authorized?
+# before_action :is_authorized
 
 
 def current_user
@@ -16,7 +16,7 @@ def current_provider
     Provider.find_by(id: session[:provider_id])
 end 
 
-  def is_authorized? 
+  def is_authorized
     # byebug
     @current_user = User.find_by(id: session[:user_id]) || @current_provider = Provider.find_by(id: session[:provider_id])
     render json: {errors: ["Not authorized", "Must log-in or create an account to access the HomeCarer Application"]}, status: :unauthorized unless @current_user || @current_provider
