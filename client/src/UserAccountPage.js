@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react'
 import UserNavBar from './UserNavBar'
 import {useSelector} from 'react-redux';
 import {Link} from 'react-router-dom'
-
+import {useDispatch} from "react-redux";
+import {login} from './features/user'
 
 function UserAccountPage() {
 
@@ -11,14 +12,15 @@ function UserAccountPage() {
     const [patientAge, setPatientAge] = useState("")
     const [patientDescription, setPatientDescription] = useState("")
 
+    const dispatch = useDispatch();
 
-    const [error, setErrors] = useState([])
+    const [errors, setErrors] = useState([])
 
     const user = useSelector((state) => state.user.value)
 
     const handleUpdate = (e) =>{
         e.preventDefault();
-        console.log(user)
+        // console.log(user)
 
         const updatedBio = {
             location: location,
@@ -32,10 +34,16 @@ function UserAccountPage() {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(updatedBio)
         })
-        .then(r => r.json())
-        .then((data)=> console.log(data))
+        .then(res => {
+            if (res.ok){
+            res.json()
+        .then(data => {
+        (dispatch(login(data)))
+    })} else {
+        res.json()
+        .then((json) => console.log(json.errors))
     }
-
+})}
     //     setLocation("")
     //     setDescription("")
     //     setPatientAge("")  
@@ -78,6 +86,8 @@ const handlePullCurrentBio = (e) => {
     <button> Update Bio</button>
 
     </form>
+
+    {errors?<div>{errors}</div>:null}
 
 </> 
 :

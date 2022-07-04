@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import ProviderNavBar from './ProviderNavBar';
 import {useSelector} from 'react-redux';
+import {Link} from 'react-router-dom'
 
 function ProviderAccountPage() {
 
@@ -55,6 +56,7 @@ function ProviderAccountPage() {
 
   return (
   <>
+  {user.id ? <> 
   <ProviderNavBar />
   <h2>Account Page</h2>
     <h3>Update your account details using the form below</h3>
@@ -67,13 +69,13 @@ function ProviderAccountPage() {
       <label>Provider Bio: </label>  
       <input className="input-large" type="text" placeholder="Bio" value={description} onChange={(e) => setDescription(e.target.value)}></input>
       <label>Certified Nurse: </label>  
-      <input className="checkbox" type="checkbox"  value={certifiedNurseAide} onChange={(e) => setCertifiedNurseAide(e.target.value)}></input>
+      <input className="checkbox" type="checkbox"  checked={certifiedNurseAide} onClick={(e) =>console.log(e)}></input>
       <label>Registered Nurse : </label>  
-      <input className="checkbox" type="checkbox"  value={registeredNurse} onChange={(e) => setRegisteredNurse(e.target.value)}></input>
+      <input className="checkbox" type="checkbox"  value={registeredNurse} onChange={(e) => setRegisteredNurse(e.value)}></input>
       <label>Open to Personal Care Appointments: </label>  
-      <input className="checkbox" type="checkbox"  value={personalCare} onChange={(e) => setPersonalCare(e.target.value)}></input>
+      <input className="checkbox" type="checkbox"  value={personalCare} onChange={(e) => console.log(e)}></input>
       <label>Open to Nursing Care Appointments : </label>  
-      <input className="checkbox" type="checkbox"  value={nursingCare} onChange={(e) => setNursingCare(e.target.value)}></input>
+      <input className="checkbox" type="checkbox"  value={nursingCare} onChange={(e) => setNursingCare(e.value)}></input>
       <label>Years working in Healthcare: </label>  
       <input className="input" type="text" placeholder="Years in Healthcare" value={yearsInHealthcare} onChange={(e) => setYearsInHealthcare(e.target.value)}></input>
       <label>Rate: </label>  
@@ -83,6 +85,11 @@ function ProviderAccountPage() {
 
     </form>
 
+    </>
+    :
+    <> <h1>Please Log-in to see your account information</h1>
+    <Link to={'/login'}>Click here to log-in</Link>
+    </>}
     </>
   )
 }
