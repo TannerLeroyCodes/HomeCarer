@@ -2,10 +2,11 @@ import React, {useState} from 'react'
 import ProviderNavBar from './ProviderNavBar';
 import {useSelector} from 'react-redux';
 import {Link} from 'react-router-dom'
+import {useDispatch} from "react-redux";
+import {login} from './features/user'
 
 function ProviderAccountPage() {
 
-    const user = useSelector((state) => state.user.value)
 
     const [location, setLocation] = useState("")
     const [certifiedNurseAide, setCertifiedNurseAide] = useState(false)
@@ -16,12 +17,15 @@ function ProviderAccountPage() {
     const [rate, setRate] = useState("")
     const [description, setDescription] = useState("")
 
-    const [error, setErrors] = useState([])
+    const [errors, setErrors] = useState([])
+
+    const user = useSelector((state) => state.user.value)
+    const dispatch = useDispatch();
 
 
     const handleUpdate = (e) =>{
         e.preventDefault();
-        console.log(user)
+        // console.log(user)
 
         const updatedBio = {
             location: location,
@@ -39,9 +43,16 @@ function ProviderAccountPage() {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(updatedBio)
         })
-        .then(r => r.json())
-        .then((data)=> console.log(data))
+        .then(res => {
+            if (res.ok){
+            res.json()
+        .then(data => {
+        (dispatch(login(data)))
+    })} else {
+        res.json()
+        .then((json) => setErrors(json.errors))
     }
+})}
 
     const handlePullCurrentBio = (e) => {
         e.preventDefault();
@@ -49,6 +60,7 @@ function ProviderAccountPage() {
         setLocation(user.provider_bio.location)
         setDescription(user.provider_bio.description)
         setCertifiedNurseAide(user.provider_bio.certified_nurse_aide)
+        setRegisteredNurse(user.provider_bio.registered_nurse)
         setRate(user.provider_bio.rate)
         setYearsInHealthcare(user.provider_bio.year_in_healthcare)
     }
@@ -69,13 +81,13 @@ function ProviderAccountPage() {
       <label>Provider Bio: </label>  
       <input className="input-large" type="text" placeholder="Bio" value={description} onChange={(e) => setDescription(e.target.value)}></input>
       <label>Certified Nurse: </label>  
-      <input className="checkbox" type="checkbox"  checked={certifiedNurseAide} onChange={(e) =>console.log(e)}></input>
+      <input className="checkbox" type="checkbox"  checked={certifiedNurseAide} onChange={(e) =>setCertifiedNurseAide(!certifiedNurseAide)}></input>
       <label>Registered Nurse : </label>  
-      <input className="checkbox" type="checkbox"  value={registeredNurse} onChange={(e) => setRegisteredNurse(e.value)}></input>
+      <input className="checkbox" type="checkbox"  checked={registeredNurse} onChange={(e) => setRegisteredNurse(!registeredNurse)}></input>
       <label>Open to Personal Care Appointments: </label>  
-      <input className="checkbox" type="checkbox"  value={personalCare} onChange={(e) => console.log(e)}></input>
+      <input className="checkbox" type="checkbox"  checked={personalCare} onChange={(e) => setPersonalCare(!personalCare)}></input>
       <label>Open to Nursing Care Appointments : </label>  
-      <input className="checkbox" type="checkbox"  value={nursingCare} onChange={(e) => setNursingCare(e.value)}></input>
+      <input className="checkbox" type="checkbox"  checked={nursingCare} onChange={(e) => setNursingCare(!nursingCare)}></input>
       <label>Years working in Healthcare: </label>  
       <input className="input" type="text" placeholder="Years in Healthcare" value={yearsInHealthcare} onChange={(e) => setYearsInHealthcare(e.target.value)}></input>
       <label>Rate: </label>  
@@ -84,6 +96,8 @@ function ProviderAccountPage() {
     <button> Update Bio</button>
 
     </form>
+
+    {errors? <div>{errors}</div>:null}
 
     </>
     :

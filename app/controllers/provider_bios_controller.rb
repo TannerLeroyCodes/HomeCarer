@@ -13,7 +13,7 @@ class ProviderBiosController < ApplicationController
     def update 
         provider_bio = ProviderBio.find(params[:id])
         provider_bio.update!(provider_bio_params)
-        render json: provider_bio, status: :created
+        render json: provider_bio.provider, serailizer: ProviderSerializer, status: :created
     end 
 
     # def destroy 

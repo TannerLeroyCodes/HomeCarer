@@ -41,14 +41,10 @@ function UserAccountPage() {
         (dispatch(login(data)))
     })} else {
         res.json()
-        .then((json) => console.log(json.errors))
+        .then((json) => setErrors(json.errors))
     }
 })}
-    //     setLocation("")
-    //     setDescription("")
-    //     setPatientAge("")  
-    //     setPatientDescription("")
-    // }
+ 
   
 
 const handlePullCurrentBio = (e) => {

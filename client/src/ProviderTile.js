@@ -1,7 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 function ProviderTile({provider}) {
+
+
+  const [showForm, setShowForm] = useState(false)
+
+const startForm = () => {
+setShowForm(!showForm)
+
+}
+
   return (
+    <>
   <div className="card">
   <div>Provider Tile</div>
   <div>Name: {provider.first_name} {provider.last_name}</div>
@@ -13,7 +23,17 @@ function ProviderTile({provider}) {
   <div>Accepts Nursing Care Appointments: {provider.provider_bio.nursing_care ? "Yes" : "No" }</div>
   <div>Rate: {provider.provider_bio.rate} Dollars per hour</div>
   <div>Provider Bio: {provider.provider_bio.description}</div>
+  <button onClick={startForm}>Schedule an Appointment</button>
+  {showForm && (
+    <form>
+      <label>Date</label>
+      <input type="text"></input>
+    </form>
+  )}
+  <div></div>
    </div>
+  
+   </>
   )
 }
 
