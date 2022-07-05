@@ -15,6 +15,7 @@
 [] Fix errors rendering when unprocessable entity is used (see line 38)
 --
 [] Render Provider Appointments for CRUD operations 
+Button to accept or decline appointments
 --
 []Make Providers Account Page auto-populate with current information. 
 --
