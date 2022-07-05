@@ -18,7 +18,7 @@ useEffect(( ) => {
 // const renderProviders = async ( ) => {
 if (providers.length !== 0) {
     // console.log(providers)
- arrOfProviders = providers.map(provider => <ProviderTile provider={provider}/>)
+ arrOfProviders = providers.map(provider => <ProviderTile key={provider.id} provider={provider}/>)
 }
 
 // return arrOfProviders
