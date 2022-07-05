@@ -13,7 +13,7 @@ class AppointmentsController < ApplicationController
 
     def create 
         appointment = Appointment.create!(appointment_params)
-        render json: appointment, status: :created
+        render json: appointment.user, serailizer: UserSerializer, status: :created
     end 
 
     def update 

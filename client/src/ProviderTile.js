@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import {useSelector} from 'react-redux';
+import {useDispatch} from "react-redux";
+import {login} from './features/user'
 
 function ProviderTile({provider}) {
 
@@ -11,6 +13,8 @@ function ProviderTile({provider}) {
   const [formTypeOfCare, setFormTypeOfCare] = useState("")
   const [formLength, setFormLength] = useState("")
   const [formNotes, setFormNotes] = useState("")
+
+  const dispatch = useDispatch();
 
 const startForm = () => {
 setShowForm(!showForm)
@@ -34,6 +38,17 @@ function handleNewAppointment(e){
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(newAppointment)
   })
+  .then(res => {
+    if (res.ok){
+    res.json()
+.then(data => {
+(dispatch(login(data)))
+})}})
+// else {
+// res.json()
+// .then((json) => setErrors(json.errors))
+// }
+// })
 
 }
 
