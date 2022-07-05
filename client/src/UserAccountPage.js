@@ -39,7 +39,10 @@ function UserAccountPage() {
             res.json()
         .then(data => {
         (dispatch(login(data)))
-    })} else {
+    })}
+    
+    
+    if (res.errors) {
         res.json()
         .then((json) => setErrors(json.errors))
     }
