@@ -15,7 +15,7 @@ class UserBiosController < ApplicationController
     def update 
         user_bio = UserBio.find(params[:id])
         user_bio.update!(user_bio_params)
-        render json: user_bio, status: :created
+        render json: user_bio.user, serailizer: UserSerializer, status: :created
     end 
 
     # def destroy 

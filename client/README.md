@@ -8,9 +8,9 @@
 --
 
 
-[] Fix Users Providers Page rendering
+[x] Fix Users Providers Page rendering
 -- 
-[] Fix User update page so that after you update the bio information. If you click the "pull info" it reflects updates. 
+[x] Fix User update page so that after you update the bio information. If you click the "pull info" it reflects updates. 
 -- 
 [] Fix errors rendering when unprocessable entity is used (see line 38)
 --

@@ -69,7 +69,7 @@ function ProviderAccountPage() {
       <label>Provider Bio: </label>  
       <input className="input-large" type="text" placeholder="Bio" value={description} onChange={(e) => setDescription(e.target.value)}></input>
       <label>Certified Nurse: </label>  
-      <input className="checkbox" type="checkbox"  checked={certifiedNurseAide} onClick={(e) =>console.log(e)}></input>
+      <input className="checkbox" type="checkbox"  checked={certifiedNurseAide} onChange={(e) =>console.log(e)}></input>
       <label>Registered Nurse : </label>  
       <input className="checkbox" type="checkbox"  value={registeredNurse} onChange={(e) => setRegisteredNurse(e.value)}></input>
       <label>Open to Personal Care Appointments: </label>  

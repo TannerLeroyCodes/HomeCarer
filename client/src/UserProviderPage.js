@@ -15,10 +15,16 @@ useEffect(( ) => {
     .then(setProviders)
 },[])
 
-if (providers === [])
-  arrOfProviders = providers.map(provider => {
-    <ProviderTile provider={provider}/>
-})
+// const renderProviders = async ( ) => {
+if (providers.length !== 0) {
+    // console.log(providers)
+ arrOfProviders = providers.map(provider => <ProviderTile provider={provider}/>)
+}
+
+// return arrOfProviders
+// }
+
+// renderProviders()
 
 
   return (
