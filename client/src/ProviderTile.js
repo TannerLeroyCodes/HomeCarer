@@ -1,12 +1,39 @@
 import React, {useState} from 'react'
+import {useSelector} from 'react-redux';
 
 function ProviderTile({provider}) {
 
+  const user = useSelector((state) => state.user.value)
+
 
   const [showForm, setShowForm] = useState(false)
+  const [formDate, setFormDate] = useState("")
+  const [formTypeOfCare, setFormTypeOfCare] = useState("")
+  const [formLength, setFormLength] = useState("")
+  const [formNotes, setFormNotes] = useState("")
 
 const startForm = () => {
 setShowForm(!showForm)
+}
+
+function handleNewAppointment(e){
+  e.preventDefault()
+
+  const newAppointment = {
+    user_id: user.id,
+    provider_id: provider.id,
+    date: formDate,
+    type_of_care: formTypeOfCare,
+    notes: formNotes,
+    accepted: false,
+    declined: false
+  }
+
+  fetch(`appointments`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(newAppointment)
+  })
 
 }
 
@@ -25,9 +52,16 @@ setShowForm(!showForm)
   <div>Provider Bio: {provider.provider_bio.description}</div>
   <button onClick={startForm}>Schedule an Appointment</button>
   {showForm && (
-    <form>
-      <label>Date</label>
-      <input type="text"></input>
+    <form onSubmit={handleNewAppointment}>
+      <label>Date:</label>
+      <input type="text" placeholder="Date" value={formDate} onChange={(e) => setFormDate(e.target.value)}></input>
+      <label>Type of Care:</label>
+      <input type="text" placeholder="Type of Care" value={formTypeOfCare} onChange={(e) => setFormTypeOfCare(e.target.value)}></input>
+      <label>Length in Hours:</label>
+      <input type="text" placeholder="Appointment Duration" value={formLength} onChange={(e) => setFormLength(e.target.value)}></input>
+      <label>Notes:</label>
+      <input type="text" placeholder="Notes" value={formNotes} onChange={(e) => setFormNotes(e.target.value)}></input>
+      <button>Create Appointment Request</button>
     </form>
   )}
   <div></div>
