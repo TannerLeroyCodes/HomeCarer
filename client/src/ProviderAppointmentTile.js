@@ -11,8 +11,11 @@ function ProviderAppointmentTile({appointment}) {
     <div>Booking Accepted: {appointment.accepted ? 'yes' : 'no'}</div>
     <div>Booking Declined: {appointment.declined ? 'yes' : 'no' }</div>
     <div>Type of Care: {appointment.type_of_care}</div>
+    <div>Start Time {appointment.start_time}</div>
     <div>Appointment Length: {appointment.length_in_hours} Hours</div>
     <div>Notes: {appointment.notes}</div>
+    <button>Accept Booking</button>
+    <button>Decline Booking</button>
     </div>
   )
 }

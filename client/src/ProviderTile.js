@@ -13,6 +13,7 @@ function ProviderTile({provider}) {
   const [formTypeOfCare, setFormTypeOfCare] = useState("")
   const [formLength, setFormLength] = useState("")
   const [formNotes, setFormNotes] = useState("")
+  const [formStartTime, setFormStartTime] = useState("")
 
   const dispatch = useDispatch();
 
@@ -28,6 +29,7 @@ function handleNewAppointment(e){
     provider_id: provider.id,
     date: formDate,
     type_of_care: formTypeOfCare,
+    start_time: formStartTime,
     notes: formNotes,
     accepted: false,
     declined: false
@@ -72,6 +74,8 @@ function handleNewAppointment(e){
       <input type="text" placeholder="Date" value={formDate} onChange={(e) => setFormDate(e.target.value)}></input>
       <label>Type of Care:</label>
       <input type="text" placeholder="Type of Care" value={formTypeOfCare} onChange={(e) => setFormTypeOfCare(e.target.value)}></input>
+      <label>Start Time:</label>
+      <input type="text" placeholder="Appointment Starting Time" value={formStartTime} onChange={(e) => setFormStartTime(e.target.value)}></input>
       <label>Length in Hours:</label>
       <input type="text" placeholder="Appointment Duration" value={formLength} onChange={(e) => setFormLength(e.target.value)}></input>
       <label>Notes:</label>
