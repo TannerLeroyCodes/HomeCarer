@@ -12,7 +12,6 @@ function ProviderAppointments() {
     
 
     if (user.appointments) {
-      
         appointments = user.appointments.map(appointment => <ProviderAppointmentTile key={appointment.id} appointment={appointment}/> )
        }
 

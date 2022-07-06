@@ -12,7 +12,7 @@ function handleAccept(){
 
 const updatedAppointment = {
     accepted: true,
-    declined: false
+    decline: false
 }
 fetch(`appointments/${appointment.id}`,{
 method: "PATCH",
@@ -54,6 +54,7 @@ function handleDecline(){
     <div>Type of Care: {appointment.type_of_care}</div>
     <div>Start Time {appointment.start_time}</div>
     <div>Appointment Length: {appointment.length_in_hours} Hours</div>
+    <div>Appointment Total: {appointment.price} Dollars</div>
     <div>Notes: {appointment.notes}</div>
     <button onClick={handleAccept}>Accept Booking</button>
     <button onClick={handleDecline}>Decline Booking</button>

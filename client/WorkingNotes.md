@@ -17,7 +17,7 @@
 -Provider.full_name(provider.first_name + provider.last_name)
 --
 [x]Add Custom Controller Methods 
--Return appointments by sorted by Date
+-Created Custom Params 
 --
 [x] Render Provider Appointments for CRUD operations 
 Button to accept or decline appointments
