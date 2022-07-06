@@ -18,8 +18,8 @@ class AppointmentsController < ApplicationController
 
     def update 
         appointment = Appointment.find(params[:id])
-        appointment.update!(appointment_params)
-        render json: appointment.user, serailizer: UserSerializer, status: :created
+        appointment.update!(update_params)
+        render json: appointment.provider, serailizer: ProviderSerializer, status: :created
     end 
 
     def destroy 
@@ -31,7 +31,12 @@ class AppointmentsController < ApplicationController
     private 
 
     def appointment_params
-        params.permit(:user_id, :provider_id, :date, :accepted, :declined, :type_of_care, :notes, :length_in_hours, :start_time)
+        params.permit(:user_id, :provider_id, :date, :type_of_care, :notes, :length_in_hours, :start_time)
     end 
+
+    def update_params
+        params.permit(:accepted, :declined)
+    end 
+
 
 end

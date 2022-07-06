@@ -11,17 +11,22 @@
 -- 
 [x]Add more validations (see providerBio)
 --
+[x]Add Custom Model Methods
+-Appointment.price (length x provider.rate)
+-User.full_name (user.first_name + user.last_name)
+-Provider.full_name(provider.first_name + provider.last_name)
+--
+[x]Add Custom Controller Methods 
+-Return appointments by sorted by Date
+--
+[x] Render Provider Appointments for CRUD operations 
+Button to accept or decline appointments
 
 
 -Z-
+
 [] Fix errors rendering when unprocessable entity is used 
 for account pages (see line 38)
---
-
-
-
-[] Render Provider Appointments for CRUD operations 
-Button to accept or decline appointments
 
 --
 [] Make Seed Data more Dynamic 
@@ -29,13 +34,8 @@ Button to accept or decline appointments
 --
 []Add Background Jobs
 --
-[]Add Custom Model Methods
--Appointment.price (length x provider.rate)
--User.full_name (user.first_name + user.last_name)
--Provider.full_name(provider.first_name + provider.last_name)
---
-[]Add Custom Controller Methods 
--Return appointments by sorted by Date
+
+-Return providers grouped by location based off of the User's location
 --
 [] Add CSS
 --

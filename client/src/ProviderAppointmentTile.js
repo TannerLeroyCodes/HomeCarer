@@ -10,14 +10,14 @@ function ProviderAppointmentTile({appointment}) {
 
 function handleAccept(){
 
-const updateAppointment = {
-    accepted: true
+const updatedAppointment = {
+    accepted: true,
+    declined: false
 }
-
 fetch(`appointments/${appointment.id}`,{
 method: "PATCH",
 headers: { "Content-Type": "application/json",}, 
-body: JSON.stringify(updateAppointment)
+body: JSON.stringify(updatedAppointment)
 })
 .then(res => {
     if (res.ok){
@@ -27,18 +27,16 @@ body: JSON.stringify(updateAppointment)
 })}
 })}
 
-
 function handleDecline(){
-    const updateAppointment = {
+    const updatedAppointment = {
         declined: true,
-        accepted: false,
-        
+        accepted: false
     }
     
     fetch(`appointments/${appointment.id}`,{
     method: "PATCH",
     headers: { "Content-Type": "application/json",}, 
-    body: JSON.stringify(updateAppointment)
+    body: JSON.stringify(updatedAppointment)
     })
     .then(res => {
         if (res.ok){

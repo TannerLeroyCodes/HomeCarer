@@ -34,7 +34,7 @@ function ProviderAccountPage() {
             registered_nurse: registeredNurse,
             personal_care: personalCare,
             nursing_care: nursingCare,
-            years_in_healhcare: yearsInHealthcare,
+            year_in_healthcare: yearsInHealthcare,
             rate: rate
         }
 
@@ -82,7 +82,7 @@ function ProviderAccountPage() {
       <input className="input" type="text" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)}></input>
       <label>Provider Bio: </label>  
       <input className="input-large" type="text" placeholder="Bio" value={description} onChange={(e) => setDescription(e.target.value)}></input>
-      <label>Certified Nurse: </label>  
+      <label>Certified Nurse Aide: </label>  
       <input className="checkbox" type="checkbox"  checked={certifiedNurseAide} onChange={(e) =>setCertifiedNurseAide(!certifiedNurseAide)}></input>
       <label>Registered Nurse : </label>  
       <input className="checkbox" type="checkbox"  checked={registeredNurse} onChange={(e) => setRegisteredNurse(!registeredNurse)}></input>

@@ -3,6 +3,7 @@ class ProviderBio < ApplicationRecord
 
   validates :location, length: {maximum: 80}
   validates :description, length: {maximum: 400}
-  validates :rate, numericality: {only_integer: true}
+  validates :rate, numericality: {greater_than: 9, less_than: 110}
+  validates :year_in_healthcare, numericality: {greater_than_or_equal_to: 1}
  
 end
