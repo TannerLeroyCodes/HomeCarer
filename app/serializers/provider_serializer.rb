@@ -3,4 +3,5 @@ class ProviderSerializer < ActiveModel::Serializer
 
   has_one :provider_bio
   has_many :appointments
+
 end

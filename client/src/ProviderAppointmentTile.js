@@ -6,7 +6,7 @@ function ProviderAppointmentTile({appointment}) {
    const dateFormatted =  dateFormat(`${appointment.date}`, "mmmm dS, yyyy")
 
   return (<div className="appointmentCard">
-    <div>AppointmentTile</div>
+    <div>Client: {appointment.user.first_name} {appointment.user.last_name}</div>
     <div>Date: {dateFormatted}</div>
     <div>Booking Accepted: {appointment.accepted ? 'yes' : 'no'}</div>
     <div>Booking Declined: {appointment.declined ? 'yes' : 'no' }</div>

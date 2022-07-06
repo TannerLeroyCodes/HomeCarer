@@ -32,5 +32,12 @@ Button to accept or decline appointments
 []Add Background Jobs
 --
 []Add Custom Model Methods
+-Appointment.price (length x provider.rate)
+-User.full_name (user.first_name + user.last_name)
+-Provider.full_name(provider.first_name + provider.last_name)
 --
 []Add Custom Controller Methods 
+
+
+--
+[] When you signup it also creates an empty bio to prevent errors. 

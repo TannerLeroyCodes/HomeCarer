@@ -8,6 +8,7 @@ function AppointmentTile({appointment}) {
   return (<div className="appointmentCard">
     <div>Care Provider:{appointment.provider.first_name} {appointment.provider.last_name}</div>
     <div>Date: {dateFormatted}</div>
+    <div>Length: {appointment.length_in_hours} Hours</div>
     <div>Booking Accepted: {appointment.accepted ? 'yes' : 'no'}</div>
     <div>Booking Declined: {appointment.declined ? 'yes' : 'no' }</div>
     <div>Type of Care: {appointment.type_of_care}</div>

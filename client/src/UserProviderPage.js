@@ -41,7 +41,7 @@ if (providers.length !== 0) {
     <div>Providers: </div>
     {arrOfProviders}
     </> :
-     <> <h1>Please Log-in to see your account information</h1>
+     <> <h1>Please Log-in to see our providers</h1>
      <Link to={'/login'}>Click here to log-in</Link>
      </>}
      </>
