@@ -25,7 +25,7 @@ function ProviderAccountPage() {
 
     const handleUpdate = (e) =>{
         e.preventDefault();
-        // console.log(user)
+        console.log(user)
 
         const updatedBio = {
             location: location,
@@ -62,6 +62,8 @@ function ProviderAccountPage() {
         setCertifiedNurseAide(user.provider_bio.certified_nurse_aide)
         setRegisteredNurse(user.provider_bio.registered_nurse)
         setRate(user.provider_bio.rate)
+        setPersonalCare(user.provider_bio.personal_care)
+        setNursingCare(user.provider_bio.nursing_care)
         setYearsInHealthcare(user.provider_bio.year_in_healthcare)
     }
 
