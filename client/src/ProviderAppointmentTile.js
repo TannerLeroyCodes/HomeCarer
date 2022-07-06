@@ -12,7 +12,7 @@ function handleAccept(){
 
 const updatedAppointment = {
     accepted: true,
-    decline: false
+    declined: false
 }
 fetch(`appointments/${appointment.id}`,{
 method: "PATCH",

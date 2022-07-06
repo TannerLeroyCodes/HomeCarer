@@ -27,15 +27,15 @@ Button to accept or decline appointments
 
 [] Fix errors rendering when unprocessable entity is used 
 for account pages (see line 38)
-
 --
 [] Make Seed Data more Dynamic 
-
 --
+[]render appointments where booking accepted = true for provider homepage 
+
+
+
 []Add Background Jobs
 --
-
--Return providers grouped by location based off of the User's location
 --
 [] Add CSS
 --

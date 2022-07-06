@@ -2,10 +2,10 @@ class UserBiosController < ApplicationController
 # before_action :is_authorized?
  
 
-    def show
-        user_bio = UserBio.find(params[:id])
-        render json: user_bio, status: :ok
-    end 
+    # def show
+    #     user_bio = UserBio.find(params[:id])
+    #     render json: user_bio, status: :ok
+    # end 
 
     def create 
         user_bio = UserBio.create!(user_bio_params)

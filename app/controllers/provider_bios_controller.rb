@@ -1,9 +1,9 @@
 class ProviderBiosController < ApplicationController
 
-    def show
-        provider_bio = ProviderBio.find(params[:id])
-        render json: provider_bio, status: :ok
-    end 
+    # def show
+    #     provider_bio = ProviderBio.find(params[:id])
+    #     render json: provider_bio, status: :ok
+    # end 
 
     def create 
         provider_bio = ProviderBio.create!(provider_bio_params)

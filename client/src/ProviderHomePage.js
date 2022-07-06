@@ -11,7 +11,13 @@ function ProviderHomePage() {
   
 
   if (user.appointments) {
-   appointments = user.appointments.map(appointment => <AppointmentTile key={appointment.id} appointment={appointment}/> )
+   appointments = user.appointments.map(appointment => 
+    // { if (appointment.accepted){
+   <AppointmentTile key={appointment.id} appointment={appointment}/> 
+
+// }}
+   
+   )
   }
 
 
