@@ -1,9 +1,52 @@
 import React from 'react'
 import dateFormat from 'dateformat'
+import {useDispatch} from "react-redux";
+import {login} from './features/user'
 
 function ProviderAppointmentTile({appointment}) {
 
    const dateFormatted =  dateFormat(`${appointment.date}`, "mmmm dS, yyyy")
+   const dispatch = useDispatch();
+
+function handleAccept(){
+
+const updateAppointment = {
+    accepted: true
+}
+
+fetch(`appointments/${appointment.id}`,{
+method: "PATCH",
+headers: { "Content-Type": "application/json",}, 
+body: JSON.stringify(updateAppointment)
+})
+.then(res => {
+    if (res.ok){
+    res.json()
+.then(data => {
+(dispatch(login(data)))
+})}
+})}
+
+
+function handleDecline(){
+    const updateAppointment = {
+        declined: true,
+        accepted: false,
+        
+    }
+    
+    fetch(`appointments/${appointment.id}`,{
+    method: "PATCH",
+    headers: { "Content-Type": "application/json",}, 
+    body: JSON.stringify(updateAppointment)
+    })
+    .then(res => {
+        if (res.ok){
+        res.json()
+    .then(data => {
+    (dispatch(login(data)))
+    })}
+    })}
 
   return (<div className="appointmentCard">
     <div>Client: {appointment.user.first_name} {appointment.user.last_name}</div>
@@ -14,8 +57,8 @@ function ProviderAppointmentTile({appointment}) {
     <div>Start Time {appointment.start_time}</div>
     <div>Appointment Length: {appointment.length_in_hours} Hours</div>
     <div>Notes: {appointment.notes}</div>
-    <button>Accept Booking</button>
-    <button>Decline Booking</button>
+    <button onClick={handleAccept}>Accept Booking</button>
+    <button onClick={handleDecline}>Decline Booking</button>
     </div>
   )
 }

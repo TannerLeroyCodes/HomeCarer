@@ -19,7 +19,7 @@ class AppointmentsController < ApplicationController
     def update 
         appointment = Appointment.find(params[:id])
         appointment.update!(appointment_params)
-        render json: appointment, status: :created
+        render json: appointment.user, serailizer: UserSerializer, status: :created
     end 
 
     def destroy 
