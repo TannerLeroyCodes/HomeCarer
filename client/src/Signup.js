@@ -18,6 +18,21 @@ function Signup() {
     const dispatch = useDispatch();
     const history = useNavigate()
 
+    // function createCondtionalBio(){
+    //     if (fetchEndPoint === "/signup"){
+    //        return  "/user_bios"
+    //     } else {
+    //         return "/provider_bios"
+    //     }
+    // }
+
+    // function conditionalUserOrProvider(){
+    //     if (fetchEndPoint === "/signup"){
+    //         return  "user_id"
+    //      } else {
+    //          return "provider_id"
+    //      }
+    // }
 
 
     function onSubmit(e){
@@ -28,6 +43,12 @@ function Signup() {
             email: email,
             password: password
         }
+
+        // const user_bio = {
+    
+        // }
+
+        
      fetch(`${fetchEndPoint}`, {
         method: 'POST', 
         headers: {'Content-Type': 'application/json'},
@@ -40,6 +61,15 @@ function Signup() {
                 dispatch(login(user))
                 history("/login")
             })
+            // .then(
+            //     fetch(createCondtionalBio(),{
+            //         method: "POST",
+            //         headers: {'Content-Type': 'application/json'},
+            //         body: JSON.stringify
+            //     }
+            //     )
+            //     )
+
      } else {
         res.json()
         .then(json => setErrors(json.errors))

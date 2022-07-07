@@ -31,9 +31,12 @@ function handleNewAppointment(e){
     type_of_care: formTypeOfCare,
     start_time: formStartTime,
     notes: formNotes,
+    length_in_hours: formLength,
     declined: false,
     accepted: false
   }
+
+  console.log(newAppointmentObj)
 
   fetch(`appointments`, {
     method: 'POST',
@@ -72,11 +75,11 @@ function handleNewAppointment(e){
   {showForm && (
     <form onSubmit={handleNewAppointment}>
       <label>Date:</label>
-      <input type="text" placeholder="Date" value={formDate} onChange={(e) => setFormDate(e.target.value)}></input>
+      <input type="date" placeholder="Date" value={formDate} onChange={(e) => setFormDate(e.target.value)}></input>
       <label>Type of Care:</label>
       <input type="text" placeholder="Type of Care" value={formTypeOfCare} onChange={(e) => setFormTypeOfCare(e.target.value)}></input>
       <label>Start Time:</label>
-      <input type="text" placeholder="Appointment Starting Time" value={formStartTime} onChange={(e) => setFormStartTime(e.target.value)}></input>
+      <input type="time" placeholder="Appointment Starting Time" value={formStartTime} onChange={(e) => setFormStartTime(e.target.value)}></input>
       <label>Length in Hours:</label>
       <input type="text" placeholder="Appointment Duration" value={formLength} onChange={(e) => setFormLength(e.target.value)}></input>
       <label>Notes:</label>

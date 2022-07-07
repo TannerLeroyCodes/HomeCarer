@@ -33,8 +33,8 @@ if (providers.length !== 0) {
     <>
      {user.id ? <> 
     <UserNavBar/>
-    <div>Provider Page</div>
-    <div>Providers: </div>
+    <h1>HomeCarer Provider Page</h1>
+    <h2>Providers: </h2>
     {arrOfProviders}
     </> :
      <> <h1>Please Log-in to see our providers</h1>
