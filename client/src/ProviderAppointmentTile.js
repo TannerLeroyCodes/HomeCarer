@@ -9,43 +9,37 @@ function ProviderAppointmentTile({appointment}) {
    const timeFormatted = dateFormat(`${appointment.start_time}`, "h:MM TT")
    const dispatch = useDispatch();
 
+function sendUpdate(updatedAppointment){
+    fetch(`appointments/${appointment.id}`,{
+        method: "PATCH",
+        headers: { "Content-Type": "application/json",}, 
+        body: JSON.stringify(updatedAppointment)
+        })
+        .then(res => {
+            if (res.ok){
+            res.json()
+        .then(data => {
+        (dispatch(login(data)))
+        })}
+        })}
+
+
 function handleAccept(){
 
 const updatedAppointment = {
     accepted: true,
     declined: false
 }
-fetch(`appointments/${appointment.id}`,{
-method: "PATCH",
-headers: { "Content-Type": "application/json",}, 
-body: JSON.stringify(updatedAppointment)
-})
-.then(res => {
-    if (res.ok){
-    res.json()
-.then(data => {
-(dispatch(login(data)))
-})}
-})}
+sendUpdate(updatedAppointment)
+}
 
 function handleDecline(){
     const updatedAppointment = {
         declined: true,
         accepted: false
     }
-    
-    fetch(`appointments/${appointment.id}`,{
-    method: "PATCH",
-    headers: { "Content-Type": "application/json",}, 
-    body: JSON.stringify(updatedAppointment)
-    })
-    .then(res => {
-        if (res.ok){
-        res.json()
-    .then(data => {
-    (dispatch(login(data)))
-    })}
-    })}
+    sendUpdate(updatedAppointment)
+}
 
   return (<div className="appointmentCard">
     <div>Client: {appointment.user.first_name} {appointment.user.last_name}</div>

@@ -78,7 +78,7 @@ function ProviderAccountPage() {
     
  <button onClick={handlePullCurrentBio}>Pull Current Bio</button>
 
-    <form onSubmit={handleUpdate}>
+    <form className="form" onSubmit={handleUpdate}>
       <label>Location: </label>  
       <input className="input" type="text" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)}></input>
       <label>Provider Bio: </label>  

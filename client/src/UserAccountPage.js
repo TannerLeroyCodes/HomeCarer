@@ -11,10 +11,10 @@ function UserAccountPage() {
     const [description, setDescription] = useState("")
     const [patientAge, setPatientAge] = useState("")
     const [patientDescription, setPatientDescription] = useState("")
+    const [errors, setErrors] = useState([])
 
     const dispatch = useDispatch();
 
-    const [errors, setErrors] = useState([])
 
     const user = useSelector((state) => state.user.value)
 
@@ -39,10 +39,7 @@ function UserAccountPage() {
             res.json()
         .then(data => {
         (dispatch(login(data)))
-    })}
-    
-    
-    if (res.errors) {
+    })} else{
         res.json()
         .then((json) => setErrors(json.errors))
     }
@@ -74,7 +71,7 @@ const handlePullCurrentBio = (e) => {
     
  <button onClick={handlePullCurrentBio}>Pull Current Bio</button>
 
-    <form onSubmit={handleUpdate}>
+    <form className="form" onSubmit={handleUpdate}>
       <label>Location: </label>  
       <input className="input" type="text" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)}></input>
       <label>User Bio: </label>  

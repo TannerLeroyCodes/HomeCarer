@@ -19,8 +19,8 @@ function ProviderAppointments() {
     <>
     {user.id ? <> 
     <ProviderNavBar />
-    <div>ProviderAppointments</div>
-    <div>Appointments: {appointments} </div>
+    <h1>Manage Your Appointment Requests</h1>
+    <h2>Appointments: {appointments} </h2>
     </>:
     <> <h1>Please Log-in to see your account information</h1>
 <Link to={'/login'}>Click here to log-in</Link>

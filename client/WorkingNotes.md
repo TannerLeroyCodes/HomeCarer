@@ -29,12 +29,15 @@ Button to accept or decline appointments
 
 [x]FIX BUG WITH CREATING APPOINTMENTS adding a appointment key to object with duplicated appointment 
 
-[] Fix errors rendering when unprocessable entity is used 
+[x] Fix errors rendering when unprocessable entity is used 
 for account pages (see line 38)
 --
 [] Make Seed Data more Dynamic 
 --
 []render appointments where booking accepted = true for provider homepage 
+--
+[] REFACTOR duplicate 
+
 
 
 
