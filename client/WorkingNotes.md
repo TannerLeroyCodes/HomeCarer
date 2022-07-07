@@ -36,7 +36,7 @@ for account pages (see line 38)
 
 
 
-[]Add Background Jobs
+[x]Add Background Jobs
 --
 --
 [] Add CSS
