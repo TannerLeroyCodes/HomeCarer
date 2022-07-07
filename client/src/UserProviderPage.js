@@ -27,10 +27,6 @@ if (providers.length !== 0) {
  arrOfProviders = providers.map(provider => <ProviderTile key={provider.id} provider={provider}/>)
 }
 
-// return arrOfProviders
-// }
-
-// renderProviders()
 
 
   return (

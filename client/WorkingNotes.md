@@ -25,6 +25,8 @@ Button to accept or decline appointments
 
 -Z-
 
+[]FIX BUG WITH CREATING APPOINTMENTS adding a appointment key to object 
+
 [] Fix errors rendering when unprocessable entity is used 
 for account pages (see line 38)
 --

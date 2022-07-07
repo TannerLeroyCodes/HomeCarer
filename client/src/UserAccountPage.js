@@ -69,6 +69,7 @@ const handlePullCurrentBio = (e) => {
     {user.id ? <> 
     <UserNavBar/>
     <h2>Account Page</h2>
+    <h3>-{user.full_name}-</h3>
     <h3>Update your account details using the form below</h3>
     
  <button onClick={handlePullCurrentBio}>Pull Current Bio</button>

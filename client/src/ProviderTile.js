@@ -24,21 +24,21 @@ setShowForm(!showForm)
 function handleNewAppointment(e){
   e.preventDefault()
 
-  const newAppointment = {
+  const newAppointmentObj = {
     user_id: user.id,
     provider_id: provider.id,
     date: formDate,
     type_of_care: formTypeOfCare,
     start_time: formStartTime,
     notes: formNotes,
-    accepted: false,
-    declined: false
+    declined: false,
+    accepted: false
   }
 
   fetch(`appointments`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(newAppointment)
+    body: JSON.stringify(newAppointmentObj)
   })
   .then(res => {
     if (res.ok){
@@ -46,6 +46,7 @@ function handleNewAppointment(e){
 .then(data => {
 (dispatch(login(data)))
 })}})
+
 // else {
 // res.json()
 // .then((json) => setErrors(json.errors))
@@ -57,7 +58,7 @@ function handleNewAppointment(e){
   return (
     <>
   <div className="card">
-  <div>Provider Tile</div>
+  <div>-HomeCarer Provider-</div>
   <div>Name: {provider.first_name} {provider.last_name}</div>
   <div>Location: {provider.provider_bio.location}</div>
   <div>Certified Nurse Aide: {provider.provider_bio.certified_nurse_aide ? "True" : "False"}</div>

@@ -45,9 +45,9 @@ puts "Starting to seed Appointments..."
 
 3.times do
 Appointment.create(user_id: tanner.id, provider_id: p1.id, date:Faker::Date.in_date_period, accepted: false, declined: false, type_of_care: "Personal care", notes: "Please heatup dinner and keep on eye on Ed. Feel free to put on any movie he is easy-going", length_in_hours: rand(1..6), start_time: "11:00 AM")
-Appointment.create(user_id: u3.id, provider_id: p3.id, date:Faker::Date.in_date_period, accepted: false, declined: false, type_of_care: "Personal care", notes: "Please heatup dinner and keep on eye on Ed. Feel free to put on any movie he is easy-going", length_in_hours: rand(1..6), start_time: "2:00 PM")
-Appointment.create(user_id: u5.id, provider_id: p4.id, date:Faker::Date.in_date_period, accepted: false, declined: false, type_of_care: "Personal care", notes: "Please heatup dinner and keep on eye on Ed. Feel free to put on any movie he is easy-going", length_in_hours: rand(1..6), start_time: "11:00 AM")
-Appointment.create(user_id: u2.id, provider_id: p1.id, date:Faker::Date.in_date_period, accepted: false, declined: false, type_of_care: "Personal care", notes: "Please heatup dinner and keep on eye on Ed. Feel free to put on any movie he is easy-going", length_in_hours: rand(1..6), start_time: "2:00 PM")
+Appointment.create(user_id: u3.id, provider_id: p3.id, date:Faker::Date.in_date_period, accepted: false, declined: false, type_of_care: "Personal care", notes: "Please spend the day with my mother. I left food in the fridge, please take my mother for a walk if she's up to it.", length_in_hours: rand(1..6), start_time: "2:00 PM")
+Appointment.create(user_id: u5.id, provider_id: p4.id, date:Faker::Date.in_date_period, accepted: false, declined: false, type_of_care: "Personal care", notes: "Please spend the day with my mother. She needs to take her medicine before eating", length_in_hours: rand(1..6), start_time: "11:00 AM")
+Appointment.create(user_id: u2.id, provider_id: p1.id, date:Faker::Date.in_date_period, accepted: false, declined: false, type_of_care: "Personal care", notes: "Please spend the day with my mother. Hangout and watch TV until I return", length_in_hours: rand(1..6), start_time: "2:00 PM")
 Appointment.create(user_id: tanner.id, provider_id: p5.id, date:Faker::Date.in_date_period, accepted: false, declined: false, type_of_care: "Personal care", notes: "Please heatup dinner and keep on eye on Ed. Feel free to put on any movie he is easy-going", length_in_hours: rand(1..6), start_time: "11:00 AM")
 end 
 
