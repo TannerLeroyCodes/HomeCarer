@@ -9,6 +9,7 @@ class UsersController < ApplicationController
         if(user = User.create!(user_params))
         UserMailer.with(user: user).welcome_email.deliver_later
         session[:user_id] = user.id
+        create_bio(user)
         render json: user, status: :created
         end
     end 
@@ -21,5 +22,9 @@ class UsersController < ApplicationController
     def user_params
         params.permit(:first_name, :last_name, :email, :password)
     end 
+
+    def create_bio(user)
+        proivider_bio = UserBio.create!(user_id: user.id, )
+     end 
 
 end

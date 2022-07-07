@@ -22,7 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_29_132211) do
     t.boolean "declined"
     t.string "type_of_care"
     t.integer "length_in_hours"
-    t.string "start_time"
+    t.time "start_time"
     t.string "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

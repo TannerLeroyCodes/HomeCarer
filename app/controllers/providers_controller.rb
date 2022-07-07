@@ -12,6 +12,7 @@ class ProvidersController < ApplicationController
     def create 
         provider = Provider.create!(provider_params)
         session[:provider_id] = provider.id
+        create_bio(provider)
         render json: provider, status: :created
     end 
     
@@ -20,6 +21,10 @@ private
     
     def provider_params
         params.permit(:first_name, :last_name, :email, :password)
+     end 
+
+     def create_bio(provider)
+        proivider_bio = ProviderBio.create!(provider_id: provider.id)
      end 
 
 

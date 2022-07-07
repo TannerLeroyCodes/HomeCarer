@@ -22,6 +22,8 @@
 [x] Render Provider Appointments for CRUD operations 
 Button to accept or decline appointments
 
+[x]Add Background Jobs
+
 
 -Z-
 
@@ -36,12 +38,12 @@ for account pages (see line 38)
 
 
 
-[x]Add Background Jobs
+
 --
 --
 [] Add CSS
 --
-[] When you signup it also creates an empty bio to prevent errors. 
+[x] When you signup it also creates an empty bio to prevent errors. 
 
 
 

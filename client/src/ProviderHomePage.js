@@ -1,6 +1,6 @@
 import React from 'react'
 import {useSelector} from 'react-redux';
-import AppointmentTile from './AppointmentTile';
+import ConfirmedProviderAppointment from './ConfirmedProviderAppointment';
 import ProviderNavBar from './ProviderNavBar';
 import {Link} from 'react-router-dom'
 
@@ -13,7 +13,7 @@ function ProviderHomePage() {
   if (user.appointments) {
    appointments = user.appointments.map(appointment => 
     // { if (appointment.accepted){
-   <AppointmentTile key={appointment.id} appointment={appointment}/> 
+   <ConfirmedProviderAppointment key={appointment.id} appointment={appointment}/> 
 
 // }}
    

@@ -2,10 +2,12 @@ import React, {useState} from 'react'
 import {useSelector} from 'react-redux';
 import {useDispatch} from "react-redux";
 import {login} from './features/user'
+import {useNavigate} from 'react-router-dom';
 
 function ProviderTile({provider}) {
 
   const user = useSelector((state) => state.user.value)
+  const history = useNavigate();
 
 
   const [showForm, setShowForm] = useState(false)
@@ -48,7 +50,9 @@ function handleNewAppointment(e){
     res.json()
 .then(data => {
 (dispatch(login(data)))
-})}})
+})
+.then(history("/home"))
+}})
 
 // else {
 // res.json()
