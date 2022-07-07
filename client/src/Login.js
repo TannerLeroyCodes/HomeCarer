@@ -65,7 +65,7 @@ fetch(`${fetchEndPoint}`,  {
         <h2>HomeCarer</h2>
         <h1>Log-in</h1>
         
-        <form className="form" onSubmit={handleLogin}>
+        <form className="login-form" onSubmit={handleLogin}>
         <select onChange={(e)=> setFetchEndPoint(e.target.value)}>
         <option>-</option>
         <option value={"/login"}>As a HomeCarer user</option>

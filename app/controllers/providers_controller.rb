@@ -24,7 +24,7 @@ private
      end 
 
      def create_bio(provider)
-        proivider_bio = ProviderBio.create!(provider_id: provider.id)
+        proivider_bio = ProviderBio.create!(provider_id: provider.id, rate: 10, year_in_healthcare: 1)
      end 
 
 

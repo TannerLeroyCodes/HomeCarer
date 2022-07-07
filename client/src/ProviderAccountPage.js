@@ -100,7 +100,7 @@ function ProviderAccountPage() {
 
     </form>
 
-    {errors? <div>{errors}</div>:null}
+    {errors? <div> {errors}</div>:null}
 
     </>
     :

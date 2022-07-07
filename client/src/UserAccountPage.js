@@ -84,7 +84,7 @@ const handlePullCurrentBio = (e) => {
 
     </form>
 
-    {errors?<div>{errors}</div>:null}
+    {errors?<div>Error: {errors}</div>:null}
 
 </> 
 :

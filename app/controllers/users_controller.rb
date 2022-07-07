@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     end 
 
     def create_bio(user)
-        proivider_bio = UserBio.create!(user_id: user.id, )
+        proivider_bio = UserBio.create!(user_id: user.id, patient_age: 18 )
      end 
 
 end
