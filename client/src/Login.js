@@ -4,6 +4,11 @@ import {login} from './features/user'
 import {Link} from 'react-router-dom'
 
 
+import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+
+
 import {useNavigate} from 'react-router-dom'
 // import {useSelector} from 'react-redux';
 
@@ -61,29 +66,37 @@ fetch(`${fetchEndPoint}`,  {
 }
 
   return (
-    <div>
+ 
+        <Container component="main" maxWidth="xs">
         <h2>HomeCarer</h2>
         <h1>Log-in</h1>
         
+        <Box sx={{   marginTop: 3,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center' }}>
         <form className="login-form" onSubmit={handleLogin}>
         <select onChange={(e)=> setFetchEndPoint(e.target.value)}>
         <option>-</option>
         <option value={"/login"}>As a HomeCarer user</option>
         <option value={"/login-provider"}>As a HomeCarer provider</option>
-    </select>
-         <label>Email:</label>   
+        </select>
+         <label>Account Type</label>
          <input type="text" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}></input>
-         <label>Password:</label>
+         <label>Email </label>   
          <input type="text" placeholder='Password' value={[password]} onChange={(e) => setPassword(e.target.value)}></input>
-         <button type={"submit"}>Log-in</button>
+         <label>Password    </label>
+         <Button variant="contained" type={"submit"}>Log-in</Button>
         </form>
+        </Box>
 
-        <div>If you need to create an account, please sign-up using the link below</div>
-    <Link to={'/'}>Click here to sign-up</Link>
+       
+    <Link to={'/'}>Dont have an account? Click here to sign-up</Link>
 
 {error?<div>{error}</div>:null}
 
-    </div>
+  </Container>
+   
   )
 }
 

@@ -2,6 +2,15 @@ import React, {useState} from 'react'
 import {useDispatch} from "react-redux";
 import {login} from './features/user'
 import {useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom'
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Grid from '@mui/material/Grid';
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+import Container from '@mui/material/Container';
+import CssBaseline from '@mui/material/CssBaseline';
+import Select from '@mui/material/Grid';;
 
 
 
@@ -17,23 +26,7 @@ function Signup() {
 
     const dispatch = useDispatch();
     const history = useNavigate()
-
-    // function createCondtionalBio(){
-    //     if (fetchEndPoint === "/signup"){
-    //        return  "/user_bios"
-    //     } else {
-    //         return "/provider_bios"
-    //     }
-    // }
-
-    // function conditionalUserOrProvider(){
-    //     if (fetchEndPoint === "/signup"){
-    //         return  "user_id"
-    //      } else {
-    //          return "provider_id"
-    //      }
-    // }
-
+    const theme = createTheme();
 
     function onSubmit(e){
         e.preventDefault();
@@ -43,11 +36,6 @@ function Signup() {
             email: email,
             password: password
         }
-
-        // const user_bio = {
-    
-        // }
-
         
      fetch(`${fetchEndPoint}`, {
         method: 'POST', 
@@ -61,15 +49,6 @@ function Signup() {
                 dispatch(login(user))
                 history("/login")
             })
-            // .then(
-            //     fetch(createCondtionalBio(),{
-            //         method: "POST",
-            //         headers: {'Content-Type': 'application/json'},
-            //         body: JSON.stringify
-            //     }
-            //     )
-            //     )
-
      } else {
         res.json()
         .then(json => setErrors(json.errors))
@@ -79,26 +58,40 @@ function Signup() {
 
   return (
     <>
+    <Container component="main" maxWidth="xs">
+   
     <h1>Sign-up</h1>
   
-    
+    <Box sx={{   marginTop: 2,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center' }}>
     <form onSubmit={onSubmit}>
+    
     <select onChange={(e)=> setFetchEndPoint(e.target.value)}>
         <option>-</option>
         <option value={"/signup"} >As a HomeCarer user</option>
         <option value={"/signup-provider"} >As a HomeCarer provider</option>
     </select>
-    <label> First Name</label>
+    <label> Account Type</label>
     <input type="text" placeholder="First Name" value={firstName} onChange={(e) => {setFirstName(e.target.value)}}></input>
-    <label> Last Name</label>
+    <label> First Name</label>
     <input type="text" placeholder="Last Name" value={lastName} onChange={(e) => {setLastName(e.target.value)}}></input>
-    <label> Email</label>
+    <label> Last Name</label>
     <input type="text" placeholder="Email" value={email} onChange={(e) => {setEmail(e.target.value)}}></input>
-    <label> Password</label>
+    <label> Email</label>
     <input type="text" placeholder="Password" value={password} onChange={(e) => {setPassword(e.target.value)}}></input>
-    <button type="submit">Sign-up</button>
+    <label> Password   </label>
+    <Button variant="contained" type="submit">Sign-up</Button>
     </form>
+    </Box>
     { Object.keys(errors) ? Object.keys(errors).map((key, index) => <div key={key}>{key+': ' + Object.values(errors)[index]}</div>) : null }
+    
+    
+    <Link to={'/login'}>Already have an account? Click here to Sign in</Link>
+
+    
+    </Container>
   
     </>
   )
