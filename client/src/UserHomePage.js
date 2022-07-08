@@ -16,11 +16,12 @@ function UserHomePage() {
   return (
   <>
   {user.id ? <> 
-  <UserNavBar/>
+  <UserNavBar className="NavBar"/>
   <h1>Home Page</h1>
     <h2>Welcome back {user.first_name}</h2>
 
-    <h3>Appointments {appointments}</h3>
+    <h3>Appointments </h3>
+    {appointments}
     </> :
     <> <h1>Please Log-in to see your account information</h1>
 <Link to={'/login'}>Click here to log-in</Link>

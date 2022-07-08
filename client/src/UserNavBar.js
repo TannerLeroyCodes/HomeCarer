@@ -4,6 +4,8 @@ import {useSelector} from 'react-redux';
 import {useDispatch} from "react-redux";
 import {logout} from './features/user'
 
+import Button from '@mui/material/Button';
+
 function UserNavBar() {
 
   const user = useSelector((state) => state.user.value)
@@ -15,11 +17,11 @@ function UserNavBar() {
   }
 
   return (
-    <div>
+    <div className='NavBar'>
     <NavLink className={'navBarLink'} to="/home"> HomePage</NavLink>
     <NavLink className={'navBarLink'} to="/providers"> Providers </NavLink>   
      <NavLink className={'navBarLink'} to="/account"> Account </NavLink>
-     {user.id ? <button onClick={handleLogOut}>Log-out</button>: null}
+     {user.id ? <Button variant="contained" onClick={handleLogOut}>Log-out</Button>: null}
 </div>
   )
 }

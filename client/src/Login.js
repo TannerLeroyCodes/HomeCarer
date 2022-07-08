@@ -82,9 +82,9 @@ fetch(`${fetchEndPoint}`,  {
         <option value={"/login-provider"}>As a HomeCarer provider</option>
         </select>
          <label>Account Type</label>
-         <input type="text" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}></input>
+         <input type="text" placeholder='Email*' value={email} onChange={(e) => setEmail(e.target.value)}></input>
          <label>Email </label>   
-         <input type="text" placeholder='Password' value={[password]} onChange={(e) => setPassword(e.target.value)}></input>
+         <input type="text" placeholder='Password*' value={[password]} onChange={(e) => setPassword(e.target.value)}></input>
          <label>Password    </label>
          <Button variant="contained" type={"submit"}>Log-in</Button>
         </form>

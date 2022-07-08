@@ -6,7 +6,7 @@ function AppointmentTile({appointment}) {
    const dateFormatted =  dateFormat(`${appointment.date}`, "mmmm dS, yyyy")
    const timeFormatted = dateFormat(`${appointment.start_time}`, "h:MM TT")
 
-  return (<div className="appointmentCard">
+  return (<div className="card">
     <div>{appointment.total}</div>
     <div>Care Provider:{appointment.provider.first_name} {appointment.provider.last_name}</div>
     <div>Date: {dateFormatted}</div>

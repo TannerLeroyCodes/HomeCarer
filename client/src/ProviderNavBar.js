@@ -3,6 +3,7 @@ import {NavLink} from 'react-router-dom'
 import {useSelector} from 'react-redux';
 import {useDispatch} from "react-redux";
 import {logout} from './features/user'
+import Button from '@mui/material/Button';
 
 function ProviderNavBar() {
 
@@ -15,11 +16,11 @@ function ProviderNavBar() {
   }
 
   return (
-    <div>
-    <NavLink className={'navBarLink'} to="/provider-home"> HomePage</NavLink>
-    <NavLink className={'navBarLink'} to="/provider-appointments"> Appointment Management </NavLink>   
-     <NavLink className={'navBarLink'} to="/provider-account"> Account </NavLink>
-     {user.id ? <button onClick={handleLogOut}>Log-out</button>: null}
+    <div className='NavBar'>
+    <NavLink className='navBarLink' to="/provider-home"> HomePage</NavLink>
+    <NavLink className='navBarLink' to="/provider-appointments"> Appointment Management </NavLink>   
+     <NavLink className='navBarLink' to="/provider-account"> Account </NavLink>
+     {user.id ? <Button variant="contained" onClick={handleLogOut}>Log-out</Button>: null}
 </div>
   )
 }

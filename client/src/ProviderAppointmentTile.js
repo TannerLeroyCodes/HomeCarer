@@ -41,7 +41,7 @@ function handleDecline(){
     sendUpdate(updatedAppointment)
 }
 
-  return (<div className="appointmentCard">
+  return (<div className="card">
     <div>Client: {appointment.user.first_name} {appointment.user.last_name}</div>
     <div>Date: {dateFormatted}</div>
     <div>Booking Accepted: {appointment.accepted ? 'yes' : 'no'}</div>
