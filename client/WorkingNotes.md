@@ -34,7 +34,7 @@ for account pages (see line 38)
 --
 [] Make Seed Data more Dynamic 
 --
-[]render appointments where booking accepted = true for provider homepage 
+[x]render appointments where booking accepted = true for provider homepage 
 --
 [] REFACTOR duplicate 
 

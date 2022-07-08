@@ -8,7 +8,7 @@ import {useNavigate} from 'react-router-dom'
 // import {useSelector} from 'react-redux';
 
 
-function Login({}) {
+function Login() {
 
 const dispatch = useDispatch();
 // const user1 = useSelector((state) => state.user.value)

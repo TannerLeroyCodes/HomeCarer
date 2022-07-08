@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import UserNavBar from './UserNavBar'
 import {useSelector} from 'react-redux';
 import {Link} from 'react-router-dom'

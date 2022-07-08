@@ -11,14 +11,10 @@ function ProviderHomePage() {
   
 
   if (user.appointments) {
-   appointments = user.appointments.map(appointment => 
-    // { if (appointment.accepted){
-   <ConfirmedProviderAppointment key={appointment.id} appointment={appointment}/> 
-
-// }}
+   appointments = user.appointments.filter(appointment => appointment.accepted).map(appointment =>   <ConfirmedProviderAppointment key={appointment.id} appointment={appointment}/> )
+   }   
    
-   )
-  }
+
 
 
   return ( <>
@@ -27,7 +23,7 @@ function ProviderHomePage() {
     <h1>Home Page</h1>
       <h2>Welcome back {user.first_name}</h2>
   
-      <h3>Appointments {appointments}</h3>
+      <h3>Confirmed Appointments: {appointments}</h3>
       </> :
       <> <h1>Please Log-in to see your account information</h1>
   <Link to={'/login'}>Click here to log-in</Link>
