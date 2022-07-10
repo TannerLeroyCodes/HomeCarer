@@ -55,13 +55,17 @@ function Signup() {
   return (
     <>
     <Container component="main" maxWidth="xs">
-   
+    <h4>If you are a new, please sign-up as either a HomeCarer user or a as a HomeCarer provider.</h4>
     <h1>Sign-up for HomeCarer</h1>
+   
   
     <Box sx={{   marginTop: 2,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center' }}>
+
+
+                
     <form onSubmit={onSubmit}>
     
     <select onChange={(e)=> setFetchEndPoint(e.target.value)}>
@@ -74,7 +78,7 @@ function Signup() {
     <label> First Name</label>
     <input type="text" placeholder="Last Name*" value={lastName} onChange={(e) => {setLastName(e.target.value)}}></input>
     <label> Last Name</label>
-    <input type="text" placeholder="Email*" value={email} onChange={(e) => {setEmail(e.target.value)}}></input>
+    <input type="text" placeholder="Email Address*" value={email} onChange={(e) => {setEmail(e.target.value)}}></input>
     <label> Email</label>
     <input type="text" placeholder="Password*" value={password} onChange={(e) => {setPassword(e.target.value)}}></input>
     <label> Password   </label>

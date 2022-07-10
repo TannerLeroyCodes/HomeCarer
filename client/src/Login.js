@@ -7,18 +7,13 @@ import {Link} from 'react-router-dom'
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-
-
 import {useNavigate} from 'react-router-dom'
-// import {useSelector} from 'react-redux';
+
 
 
 function Login() {
 
 const dispatch = useDispatch();
-// const user1 = useSelector((state) => state.user.value)
-
-
 const history = useNavigate();
 
 const [email, setEmail] = useState("")
@@ -32,8 +27,7 @@ function handleLogin(e){
     
     const user = {
         email: email,
-        password: password
-    }
+        password: password}
 
     const historyEndPoint = () => {
         if (fetchEndPoint === "/login"){
@@ -42,7 +36,6 @@ function handleLogin(e){
             return "/provider-home"
         }
     }
-
 
 fetch(`${fetchEndPoint}`,  {
     method: "POST",
@@ -62,16 +55,14 @@ fetch(`${fetchEndPoint}`,  {
         .then((json) => setError(json.errors))
     }
 })
-
 }
 
   return (
  
-        <Container component="main" maxWidth="xs">
-        <h2>HomeCarer</h2>
-        <h1>Log-in</h1>
-        
-        <Box sx={{   marginTop: 3,
+        <Container component="main" maxWidth='xs'>
+        <h1>HomeCarer</h1>
+        <h2>Log-in</h2>
+        <Box sx={{   marginTop: 2,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center' }}>
@@ -82,7 +73,7 @@ fetch(`${fetchEndPoint}`,  {
         <option value={"/login-provider"}>As a HomeCarer provider</option>
         </select>
          <label>Account Type</label>
-         <input type="text" placeholder='Email*' value={email} onChange={(e) => setEmail(e.target.value)}></input>
+         <input type="text" placeholder='Email Address*' value={email} onChange={(e) => setEmail(e.target.value)}></input>
          <label>Email </label>   
          <input type="text" placeholder='Password*' value={[password]} onChange={(e) => setPassword(e.target.value)}></input>
          <label>Password    </label>

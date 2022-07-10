@@ -35,6 +35,9 @@ for account pages (see line 38)
 [] Make Seed Data more Dynamic 
 --
 [x]render appointments where booking accepted = true for provider homepage 
+
+
+[] When I create an appointment, the time is 6 hours behind the time selected in the form. 
 --
 [] REFACTOR duplicate 
 
