@@ -68,12 +68,18 @@ code {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 5px;
+  font-family: "Lucida Console", "Courier New", monospace
 }
 
 .landing {
   display: block;
   align-items: center;
+}
+
+.logo {
+  width: 8%;
+  height: 8%
 }
 
 /* .Container {

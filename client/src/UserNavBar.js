@@ -3,6 +3,7 @@ import {NavLink} from 'react-router-dom'
 import {useSelector} from 'react-redux';
 import {useDispatch} from "react-redux";
 import {logout} from './features/user'
+import logo from './logo.jpg'
 
 import Button from '@mui/material/Button';
 
@@ -18,6 +19,7 @@ function UserNavBar() {
 
   return (
     <div className='NavBar'>
+      <img src={logo} alt="logo" className="logo"></img>
     <NavLink className={'navBarLink'} to="/home"> HomePage</NavLink>
     <NavLink className={'navBarLink'} to="/providers"> Providers </NavLink>   
      <NavLink className={'navBarLink'} to="/account"> Account </NavLink>

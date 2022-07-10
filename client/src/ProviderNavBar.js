@@ -4,6 +4,7 @@ import {useSelector} from 'react-redux';
 import {useDispatch} from "react-redux";
 import {logout} from './features/user'
 import Button from '@mui/material/Button';
+import logo from './logo.jpg'
 
 function ProviderNavBar() {
 
@@ -17,6 +18,7 @@ function ProviderNavBar() {
 
   return (
     <div className='NavBar'>
+      <img src={logo} alt="logo" className="logo"></img>
     <NavLink className='navBarLink' to="/provider-home"> HomePage</NavLink>
     <NavLink className='navBarLink' to="/provider-appointments"> Appointment Management </NavLink>   
      <NavLink className='navBarLink' to="/provider-account"> Account </NavLink>

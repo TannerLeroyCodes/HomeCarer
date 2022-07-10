@@ -1,17 +1,7 @@
 Rails.application.routes.draw do
   resources :appointments, only: [:create, :update]
-
-post '/appointments', to: 'appointments#create'
-patch '/appointments', to: 'appointments#update'
-
-
-
-
-
-
   resources :provider_bios, only: [:create, :update]
   resources :user_bios, only: [:create, :update]
-
 
 
   get '/providers', to: "providers#index"

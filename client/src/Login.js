@@ -8,6 +8,7 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import {useNavigate} from 'react-router-dom'
+import logo from "./logo.jpg"
 
 
 
@@ -60,7 +61,9 @@ fetch(`${fetchEndPoint}`,  {
   return (
  
         <Container component="main" className="Container" maxWidth='xs'>
-        <h1>HomeCarer</h1>
+        <h1><img src={logo} className="logo" alt="logo"></img>
+        HomeCarer
+        </h1>
         <h2>Log-in</h2>
         <Box sx={{   marginTop: 2,
             display: 'flex',
