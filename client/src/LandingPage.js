@@ -4,7 +4,7 @@ import Signup from './Signup'
 function LandingPage() {
   return (<div className="landing">
     <h1>HomeCarer</h1>
-    <h3>Committed to imrpoving the in-home healthcare experience for both users and health-care providers</h3>
+    <h3>Committed to imrpoving the in-home healthcare experience for those in need of care and for those providing it</h3>
 
 
   

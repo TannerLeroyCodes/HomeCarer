@@ -48,6 +48,10 @@ for account pages (see line 38)
 --
 --
 [] Add CSS
+-Add Logo []
+-Fix Account Forms []
+-Fix Appointment + Provider Tiles
+-
 --
 [x] When you signup it also creates an empty bio to prevent errors. 
 

@@ -55,7 +55,7 @@ function Signup() {
   return (
     <>
     <Container component="main" maxWidth="xs">
-    <h4>If you are a new, please sign-up as either a HomeCarer user or a as a HomeCarer provider.</h4>
+    {/* <h4>If you are a new, please sign-up as either a HomeCarer user or a as a HomeCarer provider.</h4> */}
     <h1>Sign-up for HomeCarer</h1>
    
   

@@ -4,6 +4,4 @@ class AppointmentSerializer < ActiveModel::Serializer
   has_one :provider
 
 
-
-
 end

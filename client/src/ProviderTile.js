@@ -38,7 +38,6 @@ function handleNewAppointment(e){
     accepted: false
   }
 
-  console.log(newAppointmentObj)
 
   fetch(`appointments`, {
     method: 'POST',
