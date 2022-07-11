@@ -30,7 +30,7 @@ p6 = Provider.create(first_name: Faker::Name.unique.first_name , last_name: Fake
 
 puts "Starting to seed Providers Bios..."
 
-pb1 = ProviderBio.create(provider_id: p1.id, location: ub1.location, certified_nurse_aide: true, registered_nurse: false, year_in_healthcare: rand(3..25), personal_care: true, nursing_care: true, rate: rand(29..79), description: "I have always been a natural care-giver. I love being able to help!" )
+pb1 = ProviderBio.create(provider_id: p1.id, location: ub1.location, certified_nurse_aide: true, registered_nurse: false, year_in_healthcare: rand(3..25), personal_care: true, nursing_care: true, rate: rand(29..79), description: "I have always been a natural care-giver. I love being able to help! I enjoy cooking and going for walks outside. " )
 
 # arrOfProviders = Provider.all 
 

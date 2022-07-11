@@ -5,6 +5,9 @@ import {Link} from 'react-router-dom'
 import {useDispatch} from "react-redux";
 import {login} from './features/user'
 
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+
 function ProviderAccountPage() {
 
 
@@ -76,13 +79,10 @@ function ProviderAccountPage() {
   <h3>-{user.full_name}-</h3>
     <h3>Update your account details using the form below</h3>
     
- <button onClick={handlePullCurrentBio}>Pull Current Bio</button>
+ <Button variant="contained" onClick={handlePullCurrentBio}>Pull Current Bio</Button>
 
     <form className="form" onSubmit={handleUpdate}>
-      <label>Location: </label>  
-      <input className="input" type="text" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)}></input>
-      <label>Provider Bio: </label>  
-      <input className="input-large" type="text" placeholder="Bio" value={description} onChange={(e) => setDescription(e.target.value)}></input>
+      
       <label>Certified Nurse Aide: </label>  
       <input className="checkbox" type="checkbox"  checked={certifiedNurseAide} onChange={(e) =>setCertifiedNurseAide(!certifiedNurseAide)}></input>
       <label>Registered Nurse : </label>  
@@ -90,11 +90,15 @@ function ProviderAccountPage() {
       <label>Open to Personal Care Appointments: </label>  
       <input className="checkbox" type="checkbox"  checked={personalCare} onChange={(e) => setPersonalCare(!personalCare)}></input>
       <label>Open to Nursing Care Appointments : </label>  
+      <label>Location: </label>  
+      <TextField className="input" type="text" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)}></TextField>
+      <label>Provider Bio: </label>  
+      <TextField className="input-large" multiline maxRows={6} type="text" placeholder="Bio" value={description} onChange={(e) => setDescription(e.target.value)}></TextField>
       <input className="checkbox" type="checkbox"  checked={nursingCare} onChange={(e) => setNursingCare(!nursingCare)}></input>
       <label>Years working in Healthcare: </label>  
-      <input className="input" type="text" placeholder="Years in Healthcare" value={yearsInHealthcare} onChange={(e) => setYearsInHealthcare(e.target.value)}></input>
+      <TextField className="input" type="text" placeholder="Years in Healthcare" value={yearsInHealthcare} onChange={(e) => setYearsInHealthcare(e.target.value)}></TextField>
       <label>Rate: </label>  
-      <input className="input" type="text" placeholder="Rate" value={rate} onChange={(e) => setRate(e.target.value)}></input>
+      <TextField className="input" type="text" placeholder="Rate" value={rate} onChange={(e) => setRate(e.target.value)}></TextField>
     
     <button> Update Bio</button>
 
