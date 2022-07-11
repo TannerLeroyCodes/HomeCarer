@@ -48,7 +48,7 @@ for account pages (see line 38)
 --
 --
 [] Add CSS
--Add Logo []
+-Add Logo [x]
 -Fix Account Forms []
 -Fix Appointment + Provider Tiles
 -

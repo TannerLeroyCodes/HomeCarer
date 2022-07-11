@@ -76,7 +76,7 @@ function handleNewAppointment(e){
   <div>Provider Bio: {provider.provider_bio.description}</div>
   <button onClick={startForm}>Schedule an Appointment</button>
   {showForm && (
-    <form onSubmit={handleNewAppointment}>
+    <form onSubmit={handleNewAppointment} className="form">
       <label>Date:</label>
       <input type="date" placeholder="Date" value={formDate} onChange={(e) => setFormDate(e.target.value)}></input>
       <label>Type of Care:</label>

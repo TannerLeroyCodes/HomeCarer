@@ -19,7 +19,7 @@ function UserNavBar() {
 
   return (
     <div className='NavBar'>
-      <img src={logo} alt="logo" className="logo"></img>
+     <img src={logo} alt="logo" className="logo-navbar"></img>
     <NavLink className={'navBarLink'} to="/home"> HomePage</NavLink>
     <NavLink className={'navBarLink'} to="/providers"> Providers </NavLink>   
      <NavLink className={'navBarLink'} to="/account"> Account </NavLink>

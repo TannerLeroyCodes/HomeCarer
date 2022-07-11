@@ -18,7 +18,7 @@ function ProviderNavBar() {
 
   return (
     <div className='NavBar'>
-      <img src={logo} alt="logo" className="logo"></img>
+      <img src={logo} alt="logo" className="logo-navbar"></img>
     <NavLink className='navBarLink' to="/provider-home"> HomePage</NavLink>
     <NavLink className='navBarLink' to="/provider-appointments"> Appointment Management </NavLink>   
      <NavLink className='navBarLink' to="/provider-account"> Account </NavLink>
