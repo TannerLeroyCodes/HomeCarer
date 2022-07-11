@@ -76,7 +76,7 @@ const handlePullCurrentBio = (e) => {
     
  <Button variant="contained" onClick={handlePullCurrentBio}>Pull Current Bio</Button>
 
-    <form className="form" onSubmit={handleUpdate}>
+    <form className="form-userpage " onSubmit={handleUpdate}>
       <label>Location: </label>  
       <TextField className="input" variant="outlined" type="text" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)}></TextField>
       <label>User Bio: </label>  

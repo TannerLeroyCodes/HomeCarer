@@ -83,18 +83,20 @@ function ProviderAccountPage() {
 
     <form className="form" onSubmit={handleUpdate}>
       
-      <label>Certified Nurse Aide: </label>  
+      <label>Certified Nurse Aide :</label>  
       <input className="checkbox" type="checkbox"  checked={certifiedNurseAide} onChange={(e) =>setCertifiedNurseAide(!certifiedNurseAide)}></input>
-      <label>Registered Nurse : </label>  
+      <label>Registered Nurse :</label>  
       <input className="checkbox" type="checkbox"  checked={registeredNurse} onChange={(e) => setRegisteredNurse(!registeredNurse)}></input>
-      <label>Open to Personal Care Appointments: </label>  
+      <label>Open to Personal Care Appointments:</label>  
       <input className="checkbox" type="checkbox"  checked={personalCare} onChange={(e) => setPersonalCare(!personalCare)}></input>
-      <label>Open to Nursing Care Appointments : </label>  
-      <label>Location: </label>  
-      <TextField className="input" type="text" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)}></TextField>
-      <label>Provider Bio: </label>  
-      <TextField className="input-large" multiline maxRows={6} type="text" placeholder="Bio" value={description} onChange={(e) => setDescription(e.target.value)}></TextField>
+      <label>Open to Nursing Care Appointments :</label>  
       <input className="checkbox" type="checkbox"  checked={nursingCare} onChange={(e) => setNursingCare(!nursingCare)}></input>
+      <label> Location: </label>  
+      <TextField className="input" type="text" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)}></TextField>
+      
+      <label> Provider Bio: </label>  
+      <TextField className="input-large" multiline maxRows={7} type="text" placeholder="Bio" value={description} onChange={(e) => setDescription(e.target.value)}></TextField>
+      
       <label>Years working in Healthcare: </label>  
       <TextField className="input" type="text" placeholder="Years in Healthcare" value={yearsInHealthcare} onChange={(e) => setYearsInHealthcare(e.target.value)}></TextField>
       <label>Rate: </label>  
