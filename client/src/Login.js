@@ -25,6 +25,7 @@ const [fetchEndPoint, setFetchEndPoint] = useState("")
 
 function handleLogin(e){
     e.preventDefault();
+    if (fetchEndPoint) {
     
     const user = {
         email: email,
@@ -56,7 +57,7 @@ fetch(`${fetchEndPoint}`,  {
         .then((json) => setError(json.errors))
     }
 })
-}
+}}
 
   return (
  

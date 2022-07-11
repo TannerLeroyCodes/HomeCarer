@@ -26,6 +26,8 @@ function Signup() {
 
     function onSubmit(e){
         e.preventDefault();
+
+        if (fetchEndPoint) {
         const user = {
             first_name: firstName,
             last_name: lastName,
@@ -50,7 +52,7 @@ function Signup() {
         .then(json => setErrors(json.errors))
      }
     })
-    }
+    }}
 
   return (
     <>

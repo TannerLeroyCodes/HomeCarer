@@ -13,4 +13,10 @@ def price
   self.provider.provider_bio.rate * self.length_in_hours
 end 
 
+def eastern_time
+  t = Time.parse("#{self.start_time}")
+  t + Time.zone_offset("+05:00")
+
+end 
+
 end

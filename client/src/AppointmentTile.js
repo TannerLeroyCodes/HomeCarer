@@ -4,7 +4,9 @@ import dateFormat from 'dateformat'
 function AppointmentTile({appointment}) {
  
    const dateFormatted =  dateFormat(`${appointment.date}`, "mmmm dS, yyyy")
-   const timeFormatted = dateFormat(`${appointment.start_time}`, "h:MM TT Z")
+   const timeFormatted = dateFormat(`${appointment.eastern_time}`, "h:MM TT Z")
+
+   
    
   return (<div className="card">
     <div>{appointment.total}</div>

@@ -6,7 +6,7 @@ import {login} from './features/user'
 function ProviderAppointmentTile({appointment}) {
 
    const dateFormatted =  dateFormat(`${appointment.date}`, "mmmm dS, yyyy")
-   const timeFormatted = dateFormat(`${appointment.start_time}`, "h:MM TT")
+   const timeFormatted = dateFormat(`${appointment.eastern_time}`, "h:MM TT")
    const dispatch = useDispatch();
 
 function sendUpdate(updatedAppointment){

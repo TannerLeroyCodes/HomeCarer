@@ -4,7 +4,7 @@ import dateFormat from 'dateformat'
 function ConfirmedProviderAppointment({appointment}) {
 
    const dateFormatted =  dateFormat(`${appointment.date}`, "mmmm dS, yyyy")
-   const timeFormatted = dateFormat(`${appointment.start_time}`, "h:MM TT")
+   const timeFormatted = dateFormat(`${appointment.eastern_time}`, "h:MM TT")
 
 
   return (<div className="card">

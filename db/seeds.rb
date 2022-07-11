@@ -18,31 +18,34 @@ puts "Starting to seed Providers..."
 
 p1 = Provider.create(first_name: Faker::Name.unique.first_name , last_name: Faker::Name.unique.last_name , email: "test@gmail.com", password: "testpass") 
 
-# 8.times do
-#     Provider.create!(first_name: Faker::Name.unique.first_name , last_name: Faker::Name.unique.last_name, email: Faker::Internet.email, password: "password" )
-# end 
+8.times do
+    Provider.create!(first_name: Faker::Name.unique.first_name , last_name: Faker::Name.unique.last_name, email: Faker::Internet.email, password: "password" )
+end 
 
-p2 = Provider.create(first_name: Faker::Name.unique.first_name , last_name: Faker::Name.unique.last_name , email: Faker::Internet.email, password: "password")  
-p3 = Provider.create(first_name: Faker::Name.unique.first_name , last_name: Faker::Name.unique.last_name , email: Faker::Internet.email, password: "password")  
-p4 = Provider.create(first_name: Faker::Name.unique.first_name , last_name: Faker::Name.unique.last_name , email: Faker::Internet.email, password: "password")  
-p5 = Provider.create(first_name: Faker::Name.unique.first_name , last_name: Faker::Name.unique.last_name , email: Faker::Internet.email, password: "password")  
-p6 = Provider.create(first_name: Faker::Name.unique.first_name , last_name: Faker::Name.unique.last_name , email: Faker::Internet.email, password: "password")   
+# p2 = Provider.create(first_name: Faker::Name.unique.first_name , last_name: Faker::Name.unique.last_name , email: Faker::Internet.email, password: "password")  
+# p3 = Provider.create(first_name: Faker::Name.unique.first_name , last_name: Faker::Name.unique.last_name , email: Faker::Internet.email, password: "password")  
+# p4 = Provider.create(first_name: Faker::Name.unique.first_name , last_name: Faker::Name.unique.last_name , email: Faker::Internet.email, password: "password")  
+# p5 = Provider.create(first_name: Faker::Name.unique.first_name , last_name: Faker::Name.unique.last_name , email: Faker::Internet.email, password: "password")  
+# p6 = Provider.create(first_name: Faker::Name.unique.first_name , last_name: Faker::Name.unique.last_name , email: Faker::Internet.email, password: "password")   
 
 puts "Starting to seed Providers Bios..."
 
 pb1 = ProviderBio.create(provider_id: p1.id, location: ub1.location, certified_nurse_aide: true, registered_nurse: false, year_in_healthcare: rand(3..25), personal_care: true, nursing_care: true, rate: rand(29..79), description: "I have always been a natural care-giver. I love being able to help! I enjoy cooking and going for walks outside. " )
 
-# arrOfProviders = Provider.all 
+arrOfProviders = Provider.all
+arrOfProviders.drop(1).each do |provider|
+    provider.create_provider_bio!(location: Faker::Address.state, certified_nurse_aide: true, registered_nurse: true, year_in_healthcare: rand(3..25), personal_care: true, nursing_care: true, rate: rand(29..79), description: "I really enjoy providing support to families with their loved ones!" )
+end
 
 # 8.time do
 #     ProviderBio.create!(provider: )
 # end
 
-pb2 = ProviderBio.create(provider_id: p2.id, location: Faker::Address.state, certified_nurse_aide: true, registered_nurse: true, year_in_healthcare: rand(3..25), personal_care: true, nursing_care: true, rate: rand(29..79), description: "I really enjoy providing support to families with their loved ones!" )
-pb3 = ProviderBio.create(provider_id: p3.id, location: Faker::Address.state, certified_nurse_aide: true, registered_nurse: false, year_in_healthcare: rand(3..25), personal_care: true, nursing_care: false, rate: rand(29..79), description: "I really enjoy providing support to families with their loved ones!" )
-pb4 = ProviderBio.create(provider_id: p4.id, location: Faker::Address.state, certified_nurse_aide: true, registered_nurse: true, year_in_healthcare: rand(3..25), personal_care: true, nursing_care: true, rate: rand(29..79), description: "I really enjoy providing support to families with their loved ones!" )
-pb5 = ProviderBio.create(provider_id: p5.id, location: ub1.location, certified_nurse_aide: true, registered_nurse: false, year_in_healthcare: rand(3..25), personal_care: true, nursing_care: false, rate: rand(29..79), description: "I really enjoy providing support to families with their loved ones!" )
-pb6 = ProviderBio.create(provider_id: p6.id, location: Faker::Address.state, certified_nurse_aide: true, registered_nurse: true, year_in_healthcare: rand(3..25), personal_care: true, nursing_care: true, rate: rand(29..79), description: "I really enjoy providing support to families with their loved ones!" )
+# pb2 = ProviderBio.create(provider_id: p2.id, location: Faker::Address.state, certified_nurse_aide: true, registered_nurse: true, year_in_healthcare: rand(3..25), personal_care: true, nursing_care: true, rate: rand(29..79), description: "I really enjoy providing support to families with their loved ones!" )
+# pb3 = ProviderBio.create(provider_id: p3.id, location: Faker::Address.state, certified_nurse_aide: true, registered_nurse: false, year_in_healthcare: rand(3..25), personal_care: true, nursing_care: false, rate: rand(29..79), description: "I really enjoy providing support to families with their loved ones!" )
+# pb4 = ProviderBio.create(provider_id: p4.id, location: Faker::Address.state, certified_nurse_aide: true, registered_nurse: true, year_in_healthcare: rand(3..25), personal_care: true, nursing_care: true, rate: rand(29..79), description: "I really enjoy providing support to families with their loved ones!" )
+# pb5 = ProviderBio.create(provider_id: p5.id, location: ub1.location, certified_nurse_aide: true, registered_nurse: false, year_in_healthcare: rand(3..25), personal_care: true, nursing_care: false, rate: rand(29..79), description: "I really enjoy providing support to families with their loved ones!" )
+# pb6 = ProviderBio.create(provider_id: p6.id, location: Faker::Address.state, certified_nurse_aide: true, registered_nurse: true, year_in_healthcare: rand(3..25), personal_care: true, nursing_care: true, rate: rand(29..79), description: "I really enjoy providing support to families with their loved ones!" )
 
 
 puts "Starting to seed Appointments..."
