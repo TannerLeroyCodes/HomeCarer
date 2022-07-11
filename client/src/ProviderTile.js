@@ -17,6 +17,8 @@ function ProviderTile({provider}) {
   const [formNotes, setFormNotes] = useState("")
   const [formStartTime, setFormStartTime] = useState("")
 
+  const [errors, setErrors] = useState([])
+
   const dispatch = useDispatch();
 
 const startForm = () => {
@@ -51,7 +53,14 @@ function handleNewAppointment(e){
 (dispatch(login(data)))
 })
 .then(history("/home"))
-}})
+}
+else {
+  res.json()
+  .then((json) => setErrors(json.errors))
+  }
+  })
+
+
 
 // else {
 // res.json()
@@ -76,18 +85,28 @@ function handleNewAppointment(e){
   <div>Provider Bio: {provider.provider_bio.description}</div>
   <button onClick={startForm}>Schedule an Appointment</button>
   {showForm && (
-    <form onSubmit={handleNewAppointment} className="form">
-      <label>Date:</label>
-      <input type="date" placeholder="Date" value={formDate} onChange={(e) => setFormDate(e.target.value)}></input>
-      <label>Type of Care:</label>
-      <input type="text" placeholder="Type of Care" value={formTypeOfCare} onChange={(e) => setFormTypeOfCare(e.target.value)}></input>
-      <label>Start Time:</label>
-      <input type="time" placeholder="Appointment Starting Time" value={formStartTime} onChange={(e) => setFormStartTime(e.target.value)}></input>
-      <label>Length in Hours:</label>
-      <input type="text" placeholder="Appointment Duration" value={formLength} onChange={(e) => setFormLength(e.target.value)}></input>
-      <label>Notes:</label>
-      <input type="text" placeholder="Notes" value={formNotes} onChange={(e) => setFormNotes(e.target.value)}></input>
+    <form onSubmit={handleNewAppointment} className="form-appointment">
+      <label className="appointment-label">Date:  
+         <input type="date" placeholder="Date" value={formDate} onChange={(e) => setFormDate(e.target.value)}></input>
+    </label>
+      <label className="appointment-label">Type of Care:
+         <input type="text" placeholder="Personal or Nursing Care" value={formTypeOfCare} onChange={(e) => setFormTypeOfCare(e.target.value)}></input>
+         </label>
+      
+      <label className="appointment-label">Start Time: 
+        <input type="time" placeholder="Appointment Starting Time" value={formStartTime} onChange={(e) => setFormStartTime(e.target.value)}></input>
+      </label>
+     
+      <label className="appointment-label">Length in Hours: 
+        <input type="text" placeholder="Appointment Duration" value={formLength} onChange={(e) => setFormLength(e.target.value)}></input>
+      </label>
+
+      <label className="appointment-label">Notes: 
+        <input type="text" placeholder="Notes" value={formNotes} onChange={(e) => setFormNotes(e.target.value)}></input>
+      </label>
+    
       <button>Create Appointment Request</button>
+      {errors?<div>{errors.map(error =>  error + ". ")}</div>:null}
     </form>
   )}
   <div></div>
