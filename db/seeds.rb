@@ -54,7 +54,7 @@ arrOfNotes = ["Please heatup dinner and keep on eye on my Father. Feel free to p
 
 14.times do 
 
-Appointment.create!(user: User.all.sample, provider: Provider.all.sample, date:Faker::Date.in_date_period, accepted: false, declined: false,type_of_care: "Personal care", notes: arrOfNotes.sample, length_in_hours: rand(1..6), start_time: Faker::Time.between_dates(from: Date.today, to: Date.today+21, period: :afternoon))
+Appointment.create!(user: User.all.sample, provider: Provider.all.sample, date:Faker::Date.in_date_period, accepted: false, declined: false, type_of_care: "Personal care", notes: arrOfNotes.sample, length_in_hours: rand(1..6), start_time: Faker::Time.between_dates(from: Date.today, to: Date.today+21, period: :afternoon))
 
 end 
 

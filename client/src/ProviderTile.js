@@ -54,10 +54,10 @@ function handleNewAppointment(e){
 })
 .then(history("/home"))
 }
-else {
-  res.json()
-  .then((json) => setErrors(json.errors))
-  }
+// else {
+//   res.json()
+//   .then((json) => setErrors(json.errors))
+//   }
   })
 
 

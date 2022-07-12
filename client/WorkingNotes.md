@@ -32,14 +32,14 @@ Button to accept or decline appointments
 [x] Fix errors rendering when unprocessable entity is used 
 for account pages (see line 38)
 --
-[] Make Seed Data more Dynamic 
+[x] Make Seed Data more Dynamic 
 --
 [x]render appointments where booking accepted = true for provider homepage 
 
 
-[] When I create an appointment, the time is 6 hours behind the time selected in the form. 
+[x] When I create an appointment, the time is 6 hours behind the time selected in the form. 
 --
-[] REFACTOR duplicate 
+[x] REFACTOR duplicate 
 
 
 
@@ -49,7 +49,7 @@ for account pages (see line 38)
 --
 [] Add CSS
 -Add Logo [x]
--Fix Account Forms []
+-Fix Account Forms [x]
 -Fix Appointment + Provider Tiles
 -
 --
