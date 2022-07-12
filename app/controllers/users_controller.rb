@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-# skip_before_action :is_authorized?, only: [:create]
 
     def show 
         render json: current_user
@@ -14,9 +13,6 @@ class UsersController < ApplicationController
         end
     end 
 
-  
-  
-    
  private
     
     def user_params

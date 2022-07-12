@@ -1,16 +1,5 @@
 class AppointmentsController < ApplicationController
-    # before_action :is_authorized?
-
-    # def index
-    #     render json: Appointment.all, status: :ok
-    # end 
-
-
-    # def show
-    #     appointment = Appointment.find(params[:id])
-    #     render json: appointment, status: :ok
-    # end 
-
+ 
     def create 
         appointment = Appointment.create!(appointment_params)
         render json: appointment.user, serailizer: UserSerializer, status: :created
@@ -22,11 +11,6 @@ class AppointmentsController < ApplicationController
         render json: appointment.provider, serailizer: ProviderSerializer, status: :created
     end 
 
-    # def destroy 
-    #     appointment = Appointment.find(params[:id])
-    #     appointment.destroy
-    #     head :no_content
-    # end 
 
     private 
 

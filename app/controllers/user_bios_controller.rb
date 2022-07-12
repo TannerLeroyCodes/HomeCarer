@@ -1,12 +1,5 @@
 class UserBiosController < ApplicationController
-# before_action :is_authorized?
  
-
-    # def show
-    #     user_bio = UserBio.find(params[:id])
-    #     render json: user_bio, status: :ok
-    # end 
-
     def create 
         user_bio = UserBio.create!(user_bio_params)
         render json: user_bio, status: :created
@@ -17,12 +10,6 @@ class UserBiosController < ApplicationController
         user_bio.update!(user_bio_params)
         render json: user_bio.user, serailizer: UserSerializer, status: :created
     end 
-
-    # def destroy 
-    #     user_bio = UserBio.find(params[:id])
-    #     user_bio.destroy
-    #     head :no_content
-    # end 
 
     private 
 

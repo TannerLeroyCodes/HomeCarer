@@ -4,10 +4,6 @@ class ApplicationController < ActionController::API
 rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
-
-# before_action :is_authorized
-
-
 def current_user
     User.find_by(id: session[:user_id]) 
 end

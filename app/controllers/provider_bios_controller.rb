@@ -1,9 +1,5 @@
 class ProviderBiosController < ApplicationController
 
-    # def show
-    #     provider_bio = ProviderBio.find(params[:id])
-    #     render json: provider_bio, status: :ok
-    # end 
 
     def create 
         provider_bio = ProviderBio.create!(provider_bio_params)
@@ -16,11 +12,6 @@ class ProviderBiosController < ApplicationController
         render json: provider_bio.provider, serailizer: ProviderSerializer, status: :created
     end 
 
-    # def destroy 
-    #     provider_bio = providerBio.find(params[:id])
-    #     provider_bio.destroy
-    #     head :no_content
-    # end 
 
     private 
 

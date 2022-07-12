@@ -28,7 +28,6 @@ function ProviderAccountPage() {
 
     const handleUpdate = (e) =>{
         e.preventDefault();
-        console.log(user)
 
         const updatedBio = {
             location: location,
