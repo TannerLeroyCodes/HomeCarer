@@ -1,5 +1,7 @@
 class ProvidersController < ApplicationController
 
+    before_action :is_authorized, only: [:index]
+
     def index 
         render json: Provider.all, status: :ok
     end 
