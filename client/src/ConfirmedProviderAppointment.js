@@ -1,5 +1,6 @@
 import React from 'react'
 import dateFormat from 'dateformat'
+import Card from '@mui/material/Card'
 
 function ConfirmedProviderAppointment({appointment}) {
 
@@ -7,7 +8,7 @@ function ConfirmedProviderAppointment({appointment}) {
    const timeFormatted = dateFormat(`${appointment.eastern_time}`, "h:MM TT")
 
 
-  return (<div className="card">
+  return (<Card className="card">
   <div>Client: {appointment.user.first_name} {appointment.user.last_name}</div>
     <div>Date: {dateFormatted}</div>
     <div>Booking Accepted: {appointment.accepted ? 'yes' : 'no'}</div>
@@ -17,7 +18,7 @@ function ConfirmedProviderAppointment({appointment}) {
     <div>Appointment Length: {appointment.length_in_hours} Hours</div>
     <div>Appointment Total: {appointment.price} Dollars</div>
     <div>Notes: {appointment.notes}</div>
-    </div>
+    </Card>
   )
 }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import dateFormat from 'dateformat'
+import Card from '@mui/material/Card'
 
 function AppointmentTile({appointment}) {
  
@@ -8,7 +9,7 @@ function AppointmentTile({appointment}) {
 
    
    
-  return (<div className="card">
+  return (<Card className="card">
     <div>{appointment.total}</div>
     <div>Care Provider:{appointment.provider.first_name} {appointment.provider.last_name}</div>
     <div>Date: {dateFormatted}</div>
@@ -18,7 +19,7 @@ function AppointmentTile({appointment}) {
     <div>Booking Declined: {appointment.declined ? 'yes' : 'no' }</div>
     <div>Type of Care: {appointment.type_of_care}</div>
     <div>Notes: {appointment.notes}</div>
-    </div>
+    </Card>
   )
 }
 

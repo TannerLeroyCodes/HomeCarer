@@ -3,6 +3,7 @@ import {useSelector} from 'react-redux';
 import {useDispatch} from "react-redux";
 import {login} from './features/user'
 import {useNavigate} from 'react-router-dom';
+import Card from '@mui/material/Card'
 
 function ProviderTile({provider}) {
 
@@ -62,17 +63,13 @@ else {
 
 
 
-// else {
-// res.json()
-// .then((json) => setErrors(json.errors))
-// }
-// })
+
 
 }
 
   return (
     <>
-  <div className="card">
+  <Card className="card">
   <div>-HomeCarer Provider-</div>
   <div>Name: {provider.first_name} {provider.last_name}</div>
   <div>Location: {provider.provider_bio.location}</div>
@@ -109,8 +106,8 @@ else {
       {errors?<div>{errors.map(error =>  error + ". ")}</div>:null}
     </form>
   )}
-  <div></div>
-   </div>
+ 
+   </Card>
   
    </>
   )

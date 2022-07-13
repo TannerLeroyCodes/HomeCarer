@@ -2,6 +2,7 @@ import React from 'react'
 import dateFormat from 'dateformat'
 import {useDispatch} from "react-redux";
 import {login} from './features/user'
+import Card from '@mui/material/Card'
 
 function ProviderAppointmentTile({appointment}) {
 
@@ -41,7 +42,7 @@ function handleDecline(){
     sendUpdate(updatedAppointment)
 }
 
-  return (<div className="card">
+  return (<Card className="card">
     <div>Client: {appointment.user.first_name} {appointment.user.last_name}</div>
     <div>Date: {dateFormatted}</div>
     <div>Booking Accepted: {appointment.accepted ? 'yes' : 'no'}</div>
@@ -53,7 +54,7 @@ function handleDecline(){
     <div>Notes: {appointment.notes}</div>
     <button onClick={handleAccept}>Accept Booking</button>
     <button onClick={handleDecline}>Decline Booking</button>
-    </div>
+    </Card>
   )
 }
 
