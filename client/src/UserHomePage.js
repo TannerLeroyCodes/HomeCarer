@@ -20,7 +20,7 @@ function UserHomePage() {
   <h1>Home Page</h1>
     <h2>Welcome back {user.first_name}</h2>
 
-    <h3>Appointments </h3>
+    <h3>Appointments:</h3>
     {appointments}
     </> :
     <> <h1>Please Log-in to see your account information</h1>
