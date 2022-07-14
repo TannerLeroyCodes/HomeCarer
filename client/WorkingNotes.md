@@ -60,3 +60,6 @@ for account pages (see line 38)
 --- STRETCH ----
 
 []Make Providers & Users Account Pages auto-populate with current information.
+
+
+## commmand to start postgresql - sudo service postgresql start
