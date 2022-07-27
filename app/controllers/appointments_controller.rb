@@ -1,7 +1,9 @@
 class AppointmentsController < ApplicationController
  
     def create 
+        
         appointment = Appointment.create!(appointment_params)
+        # debugger
         render json: appointment.user, serailizer: UserSerializer, status: :created
     end 
 
